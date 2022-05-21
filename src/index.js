@@ -1,7 +1,7 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Navigation, Footer, Home, About, Contact } from './components';
+import { Navigation, Footer, Home, Experience, Work } from './components';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/styles/Global';
 import { createTheme, NextUIProvider } from '@nextui-org/react';
@@ -42,8 +42,8 @@ root.render(
           <Navigation />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/about' element={<About />} />
-            <Route path='/contact' element={<Contact />} />
+            <Route path='/experience' element={<Experience />} />
+            <Route path='/work' element={<Work />} />
           </Routes>
           <Footer />
         </Router>

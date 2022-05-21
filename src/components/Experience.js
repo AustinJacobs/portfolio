@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Contact() {
+function Experience() {
   return (
     <div>
-      CONTACT
+      EXPERIENCE
     </div>
   );
 }
 
-export default Contact;
+export default Experience;

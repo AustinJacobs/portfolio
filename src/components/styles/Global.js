@@ -10,6 +10,8 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     font-family: 'Poppins', sans-serif;
+    display: grid;
+    max-width: 100%;
   }
 `;
 
