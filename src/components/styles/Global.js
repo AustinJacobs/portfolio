@@ -13,6 +13,24 @@ const GlobalStyles = createGlobalStyle`
     display: grid;
     max-width: 100%;
   }
+
+  .menuNav {
+  overflow-y: scroll;
+  position: fixed;
+  top: 70px;
+  background: white;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  max-width: 100%;
+  z-index: 9;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+}
 `;
 
 export default GlobalStyles;

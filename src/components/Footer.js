@@ -32,55 +32,74 @@ function Footer() {
     text-align: center;
   `;
 
+  const FooterDate = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    grid-column: 1/5;
+    text-align: center;
+  `;
+
+  const current = new Date();
+  const date = current.getFullYear();
+
   return (
     <FooterContainer>
-      <Card>
-        <Grid gridTemplateColumns='80px 80px 80px 80px'>
-          <FooterInfoBox>
-            <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
-              <Grid>
-                <Flex justifySelf='center' alignSelf='center'>
-                  <Text size='1em' color='text'>
-                    Do you have any questions or would you like to collaborate on a project? Let's connect and get started.
-                  </Text>
-                </Flex>
-              </Grid>
+      <Grid gridTemplateColumns='80px 80px 80px 80px'>
+        <FooterInfoBox>
+          <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
+            <Grid>
+              <Flex justifySelf='center' alignSelf='center'>
+                <Text size='1em' color='text'>
+                  Do you have any questions or would you like to collaborate on
+                  a project? Let's connect and get started.
+                </Text>
+              </Flex>
             </Grid>
-          </FooterInfoBox>
-          <Spacer />
-          <Grid gridColumn='1'>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Link color='text' href='https://www.linkedin.com/in/aust-t-jac/'>
-                <FaLinkedin size={40} />
-              </Link>
-            </Flex>
           </Grid>
-
-          <Grid gridColumn='2'>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Link color='text' href='https://github.com/AustinJacobs'>
-                <FaGithubAlt size={40} />
-              </Link>
-            </Flex>
-          </Grid>
-
-          <Grid gridColumn='3'>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Link color='text' href='https://www.instagram.com/aust.t.jac/'>
-                <FaInstagram size={40} />
-              </Link>
-            </Flex>
-          </Grid>
-
-          <Grid gridColumn='4'>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Link color='text' href='mailto:aust.t.jac@gmail.com'>
-                <FaEnvelope size={40} />
-              </Link>
-            </Flex>
-          </Grid>
+        </FooterInfoBox>
+        <Spacer />
+        <Grid gridColumn='1'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Link color='text' href='https://www.linkedin.com/in/aust-t-jac/'>
+              <FaLinkedin size={40} />
+            </Link>
+          </Flex>
         </Grid>
-      </Card>
+
+        <Grid gridColumn='2'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Link color='text' href='https://github.com/AustinJacobs'>
+              <FaGithubAlt size={40} />
+            </Link>
+          </Flex>
+        </Grid>
+
+        <Grid gridColumn='3'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Link color='text' href='https://www.instagram.com/aust.t.jac/'>
+              <FaInstagram size={40} />
+            </Link>
+          </Flex>
+        </Grid>
+
+        <Grid gridColumn='4'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Link color='text' href='mailto:aust.t.jac@gmail.com'>
+              <FaEnvelope size={40} />
+            </Link>
+          </Flex>
+        </Grid>
+        <Spacer/>
+        <FooterDate>
+          <Grid>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Text size='1em' color='text'>
+                Designed & Built by Austin Jacobs ©{date}
+              </Text>
+            </Flex>
+          </Grid>
+        </FooterDate>
+      </Grid>
     </FooterContainer>
   );
 }
