@@ -31,6 +31,15 @@ const GlobalStyles = createGlobalStyle`
 .menuNav.showMenu {
   width: 100%;
 }
+
+.nav-a {
+  color: black;
+}
+
+.nav-a:hover {
+  text-decoration: underline;
+  color: black;
+}
 `;
 
 export default GlobalStyles;

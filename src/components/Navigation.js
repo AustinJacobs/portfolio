@@ -41,12 +41,19 @@ function Navigation() {
     height: 85vh;
     width: 100vw;
     max-width: 100%;
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media only screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
   `;
 
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
 
   const closeMenu = () => {
-    setNavbarOpen(false);
+    setOpen(false);
   };
 
   return (
@@ -58,7 +65,7 @@ function Navigation() {
               css={{ p: 0 }}
               iconOn={<SunIcon filled />}
               iconOff={<MoonIcon filled />}
-              size='md'
+              size='lg'
               checked={isDark}
               onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
             />
@@ -66,38 +73,38 @@ function Navigation() {
         </Grid>
         <Grid gridColumn='3'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Text size='1.3em'>Austin Jacobs</Text>
+            <Text h2>AJ</Text>
           </Flex>
         </Grid>
         <Grid gridColumn='5'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Hamburger rounded toggled={navbarOpen} toggle={setNavbarOpen} />
+            <Hamburger toggled={isOpen} toggle={setOpen} />
           </Flex>
         </Grid>
       </Grid>
-      <NavOverlay className={`menuNav ${navbarOpen ? ' showMenu' : ''}`}>
+      <NavOverlay className={`menuNav ${isOpen ? ' showMenu' : ''}`}>
         <NavOverlayGrid>
-          <Grid gridColumn='1'>
+          <Grid>
             <Flex justifySelf='center' alignSelf='center'>
-              <NavLink onClick={() => closeMenu()} color='text' to='/'>
-                Home
+              <NavLink className='nav-a' onClick={() => closeMenu()} to='/'>
+                <Text h1>Home</Text>
               </NavLink>
             </Flex>
           </Grid>
-          <Grid gridColumn='2'>
+          <Grid>
             <Flex justifySelf='center' alignSelf='center'>
               <NavLink
+                className='nav-a'
                 onClick={() => closeMenu()}
-                color='text'
                 to='/experience'>
-                Experience
+                <Text h1>Experience</Text>
               </NavLink>
             </Flex>
           </Grid>
-          <Grid gridColumn='3'>
+          <Grid>
             <Flex justifySelf='center' alignSelf='center'>
-              <NavLink onClick={() => closeMenu()} color='text' to='/work'>
-                Work
+              <NavLink className='nav-a' onClick={() => closeMenu()} to='/work'>
+                <Text h1>Work</Text>
               </NavLink>
             </Flex>
           </Grid>
