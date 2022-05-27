@@ -4,38 +4,38 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navigation, Footer, Home, Experience, Work } from './components';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyles from './components/styles/Global';
-import { createTheme, NextUIProvider } from '@nextui-org/react';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { NextUIProvider } from '@nextui-org/react'; // Add createTheme and uncomment other code to add theme switch.
+// import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-// 2. Call `createTheme` and pass your custom values
-const lightTheme = createTheme({
-  type: 'light',
-  theme: {
-    colors: {
-      myColor: '#ff4ecd',
-    }
-  }, // optional
-});
+// // 2. Call `createTheme` and pass your custom values
+// const lightTheme = createTheme({
+//   type: 'light',
+//   theme: {
+//     colors: {
+//       myColor: '#ff4ecd',
+//     }
+//   }, // optional
+// });
 
-const darkTheme = createTheme({
-  type: 'dark',
-  theme: {
-    colors: {
-      myColor: '#000000',
-    }
-  }, // optional
-});
+// const darkTheme = createTheme({
+//   type: 'dark',
+//   theme: {
+//     colors: {
+//       myColor: '#000000',
+//     }
+//   }, // optional
+// });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NextThemesProvider
+    {/* <NextThemesProvider
       defaultTheme='system'
       attribute='class'
       value={{
         light: lightTheme.className,
         dark: darkTheme.className,
-      }}>
+      }}> */}
       <NextUIProvider>
         <GlobalStyles />
         <Router>
@@ -48,7 +48,7 @@ root.render(
           <Footer />
         </Router>
       </NextUIProvider>
-    </NextThemesProvider>
+    {/* </NextThemesProvider> */}
   </React.StrictMode>
 );
 

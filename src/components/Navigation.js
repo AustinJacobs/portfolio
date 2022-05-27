@@ -2,9 +2,9 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Grid from '../components/styles/Grid';
 import Flex from '../components/styles/Flex';
-import { Text } from '@nextui-org/react';
-import { useTheme as useNextTheme } from 'next-themes';
-import { Switch, useTheme } from '@nextui-org/react';
+import { Text, Image } from '@nextui-org/react';
+// import { useTheme as useNextTheme } from 'next-themes';
+// import { Switch, useTheme } from '@nextui-org/react';
 import styled from 'styled-components';
 import { useState } from 'react';
 import {
@@ -16,13 +16,14 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { SunIcon } from '../assets/SunIcon';
-import { MoonIcon } from '../assets/MoonIcon';
+// import { SunIcon } from '../assets/SunIcon';
+// import { MoonIcon } from '../assets/MoonIcon';
 import { Pivot as Hamburger } from 'hamburger-react';
+import logo from '../assets/bird_logo_color.png';
 
 function Navigation() {
-  const { setTheme } = useNextTheme();
-  const { isDark } = useTheme();
+  // const { setTheme } = useNextTheme();
+  // const { isDark } = useTheme();
 
   const NavContainer = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
@@ -38,11 +39,12 @@ function Navigation() {
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
-    height: 85vh;
+    height: 90vh;
     width: 100vw;
     max-width: 100%;
 
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
 
     @media only screen and (max-width: 650px) {
       grid-template-columns: 1fr;
@@ -58,27 +60,22 @@ function Navigation() {
 
   return (
     <NavContainer>
-      <Grid gridTemplateColumns='1fr 1fr 1fr 1fr 1fr'>
-        <Grid gridColumn='1'>
+      <Grid padding='20px' gridTemplateColumns='20px 50px auto 50px 20px'>
+        <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Switch
-              css={{ p: 0 }}
-              iconOn={<SunIcon filled />}
-              iconOff={<MoonIcon filled />}
-              size='lg'
-              checked={isDark}
-              onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+            <NavLink to='/'>
+              <Image className='logo' width={50} src={logo} alt='Logo Image' />
+            </NavLink>
+          </Flex>
+        </Grid>
+        <Grid gridColumn='4'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Hamburger
+              className='hamburger'
+              size={48}
+              toggled={isOpen}
+              toggle={setOpen}
             />
-          </Flex>
-        </Grid>
-        <Grid gridColumn='3'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Text h2>AJ</Text>
-          </Flex>
-        </Grid>
-        <Grid gridColumn='5'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Hamburger toggled={isOpen} toggle={setOpen} />
           </Flex>
         </Grid>
       </Grid>
@@ -108,6 +105,18 @@ function Navigation() {
               </NavLink>
             </Flex>
           </Grid>
+          {/* <Grid>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Switch
+                css={{ p: 0 }}
+                iconOn={<SunIcon filled />}
+                iconOff={<MoonIcon filled />}
+                size='lg'
+                checked={isDark}
+                onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
+              />
+            </Flex>
+          </Grid> */}
         </NavOverlayGrid>
       </NavOverlay>
     </NavContainer>

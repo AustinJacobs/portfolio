@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
   .menuNav {
   overflow-y: scroll;
   position: fixed;
-  top: 70px;
+  top: 110px;
   background: white;
   left: 0;
   bottom: 0;
@@ -33,12 +33,16 @@ const GlobalStyles = createGlobalStyle`
 }
 
 .nav-a {
-  color: black;
+  color: orange;
 }
 
 .nav-a:hover {
   text-decoration: underline;
   color: black;
+}
+
+.logo {
+
 }
 `;
 
