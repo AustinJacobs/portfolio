@@ -41,8 +41,13 @@ const GlobalStyles = createGlobalStyle`
   color: black;
 }
 
-.logo {
+.footer-a:hover {
+  text-decoration: underline;
+  color: black;
+}
 
+.carousel {
+  align-self: center
 }
 `;
 
