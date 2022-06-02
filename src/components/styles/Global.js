@@ -14,21 +14,34 @@ const GlobalStyles = createGlobalStyle`
     max-width: 100%;
   }
 
-  .menuNav {
-  overflow-y: scroll;
+.menuNav {
   position: fixed;
-  top: 110px;
   background: white;
   left: 0;
   bottom: 0;
   height: 100vh;
   width: 0;
-  overflow: hidden;
   max-width: 100%;
   z-index: 9;
+  display: none;
+}
+
+.hamburger {
+  z-index: 100;
+  position: fixed;
+  top: 30px;
+  right: 30px
+}
+
+.logo {
+  z-index: 100;
+  position: fixed;
+  top: 30px;
+  left: 30px
 }
 
 .menuNav.showMenu {
+  display: block;
   width: 100%;
 }
 

@@ -3,8 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Grid from '../components/styles/Grid';
 import Flex from '../components/styles/Flex';
 import { Text, Image } from '@nextui-org/react';
-// import { useTheme as useNextTheme } from 'next-themes';
-// import { Switch, useTheme } from '@nextui-org/react';
 import styled from 'styled-components';
 import { useState } from 'react';
 import {
@@ -16,14 +14,10 @@ import {
   layout,
   grid,
 } from 'styled-system';
-// import { SunIcon } from '../assets/SunIcon';
-// import { MoonIcon } from '../assets/MoonIcon';
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 
 function Navigation() {
-  // const { setTheme } = useNextTheme();
-  // const { isDark } = useTheme();
 
   const NavContainer = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
@@ -60,7 +54,7 @@ function Navigation() {
 
   return (
     <NavContainer>
-      <Grid padding='20px' gridTemplateColumns='20px 50px auto 50px 20px'>
+      <Grid marginBottom='200px' padding='20px' gridTemplateColumns='20px 50px auto 50px 20px'>
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
             <NavLink to='/'>
@@ -68,19 +62,14 @@ function Navigation() {
             </NavLink>
           </Flex>
         </Grid>
-        <Grid gridColumn='4'>
+        <Grid gridColumn='4' className='hamburger'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Hamburger
-              className='hamburger'
-              size={48}
-              toggled={isOpen}
-              toggle={setOpen}
-            />
+            <Hamburger size={48} toggled={isOpen} toggle={setOpen} />
           </Flex>
         </Grid>
       </Grid>
       <NavOverlay className={`menuNav ${isOpen ? ' showMenu' : ''}`}>
-        <NavOverlayGrid>
+        <NavOverlayGrid marginTop='50px'>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
               <NavLink className='nav-a' onClick={() => closeMenu()} to='/'>
@@ -105,18 +94,6 @@ function Navigation() {
               </NavLink>
             </Flex>
           </Grid>
-          {/* <Grid>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Switch
-                css={{ p: 0 }}
-                iconOn={<SunIcon filled />}
-                iconOff={<MoonIcon filled />}
-                size='lg'
-                checked={isDark}
-                onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-              />
-            </Flex>
-          </Grid> */}
         </NavOverlayGrid>
       </NavOverlay>
     </NavContainer>
