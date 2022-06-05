@@ -42,7 +42,7 @@ function Footer() {
 
   return (
     <FooterContainer>
-      <Grid gridTemplateColumns='1fr 1fr 1fr 1fr'>
+      <Grid gridTemplateColumns='1fr 1fr 1fr'>
         <FooterInfoBox>
           <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
             <Grid>
@@ -75,16 +75,6 @@ function Footer() {
 
         <Grid gridColumn='3'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Link
-              className='footer-a'
-              href='https://www.instagram.com/aust.t.jac/'>
-              <Text h4>Instagram</Text>
-            </Link>
-          </Flex>
-        </Grid>
-
-        <Grid gridColumn='4'>
-          <Flex justifySelf='center' alignSelf='center'>
             <Link className='footer-a' href='mailto:aust.t.jac@gmail.com'>
               <Text h4>Email</Text>
             </Link>
@@ -94,7 +84,9 @@ function Footer() {
         <FooterDate>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
-              <Text size='1em'>Designed & Built by Austin Jacobs ©{date}</Text>
+              <Text css={{ textRendering: 'auto' }} size='1em'>
+                Designed & Built by Austin Jacobs ©{date}
+              </Text>
             </Flex>
           </Grid>
         </FooterDate>
