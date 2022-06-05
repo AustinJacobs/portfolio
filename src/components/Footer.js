@@ -47,7 +47,7 @@ function Footer() {
           <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
             <Grid>
               <Flex justifySelf='center' alignSelf='center'>
-                <Text size='5em' weight='extrabold'>
+                <Text size='3em' weight='extrabold'>
                   Let's connect and get started.
                 </Text>
               </Flex>

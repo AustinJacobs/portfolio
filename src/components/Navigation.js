@@ -18,11 +18,14 @@ import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 
 function Navigation() {
-
   const NavContainer = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
 
     margin: 1em 0 1em 0;
+
+    @media only screen and (min-width: 768px) {
+      margin-left: 2em;
+    }
   `;
 
   const NavOverlay = styled.div`
@@ -40,7 +43,7 @@ function Navigation() {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
 
-    @media only screen and (max-width: 650px) {
+    @media only screen and (max-width: 768px) {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr 1fr;
     }
@@ -54,7 +57,7 @@ function Navigation() {
 
   return (
     <NavContainer>
-      <Grid marginBottom='200px' padding='20px' gridTemplateColumns='20px 50px auto 50px 20px'>
+      <Grid gridTemplateColumns='20px 50px auto 50px 20px'>
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
             <NavLink to='/'>

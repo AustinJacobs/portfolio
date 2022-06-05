@@ -11,8 +11,13 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     display: grid;
-    max-width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
   }
+
+  html {
+  scroll-behavior: smooth;
+}
 
 .menuNav {
   position: fixed;
@@ -59,9 +64,39 @@ const GlobalStyles = createGlobalStyle`
   color: black;
 }
 
-.carousel {
-  align-self: center
+.programmer-img {
+  width: 90%;
+  margin: 50px auto;
+
 }
+
+.hello-img {
+  width: 90%;
+  margin: 50px auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .hamburger {
+    right: 100px
+  }
+
+  .logo {
+    left: 100px
+  }
+
+  .programmer-img {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  
+}
+
+@media only screen and (min-width: 1200px) {
+  
+}
+
 `;
 
 export default GlobalStyles;
