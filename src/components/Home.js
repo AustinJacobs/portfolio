@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import media from '../assets/media.jpg';
-import calculator from '../assets/calculator.jpg';
-import tracker from '../assets/tracker.jpg';
 import { Text, Image, Button } from '@nextui-org/react';
 import styled from 'styled-components';
 import {
@@ -17,6 +14,7 @@ import programmer from '../assets/undraw_programming_re_kg9v.svg';
 import hello from '../assets/undraw_hello_re_3evm.svg';
 import HorizontalRule from './styles/HorizontalRule';
 import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const ButtonContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
@@ -195,6 +193,16 @@ function Home() {
         <AboutImageContainer>
           <Image className='hello-img' src={hello} alt='Hello Illustration' />
         </AboutImageContainer>
+        <motion.div
+          className='container'
+          initial={{ scale: 0 }}
+          animate={{ rotate: 180, scale: 1 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+          }}
+        />
       </HomeAboutGrid>
     </div>
   );

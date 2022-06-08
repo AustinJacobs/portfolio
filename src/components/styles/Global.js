@@ -2,21 +2,38 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  body {
-    font-family: 'Poppins', sans-serif;
-    display: grid;
-    max-width: 1800px;
-    margin: 0 auto;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  display: grid;
+  max-width: 1800px;
+  margin: 0 auto;
+}
 
-  html {
+html {
   scroll-behavior: smooth;
+}
+
+.container {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  place-content: center;
+  overflow: hidden;
+}
+
+.item {
+  width: 56%;
+  overflow: visible;
+  stroke: #FF7900;
+  stroke-width: 4;
+  stroke-linejoin: round;
+  stroke-linecap: round;
 }
 
 .menuNav {
@@ -51,17 +68,17 @@ const GlobalStyles = createGlobalStyle`
 }
 
 .nav-a {
-  color: orange;
+  color: black;
 }
 
 .nav-a:hover {
   text-decoration: underline;
-  color: black;
+  color: #FF7900;
 }
 
 .footer-a:hover {
   text-decoration: underline;
-  color: black;
+  color: #FF7900;
 }
 
 .programmer-img {

@@ -16,6 +16,20 @@ import {
 } from 'styled-system';
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
+import { motion } from 'framer-motion';
+
+const icon = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+    fill: 'rgba(255, 255, 255, 0)',
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    fill: 'rgba(255, 255, 255, 1)',
+  },
+};
 
 function Navigation() {
   const NavContainer = styled.div`
@@ -61,7 +75,24 @@ function Navigation() {
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
             <NavLink to='/'>
-              <Image className='logo' width={50} src={logo} alt='Logo Image' />
+              {/* <Image className='logo' width={50} src={logo} alt='Logo Image' /> */}
+              <div className='container'>
+                <motion.svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 100 100'
+                  className='item'>
+                  <motion.path
+                    d='M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z'
+                    variants={icon}
+                    initial='hidden'
+                    animate='visible'
+                    transition={{
+                      default: { duration: 2, ease: 'easeInOut' },
+                      fill: { duration: 2, ease: [1, 0, 0.8, 1] },
+                    }}
+                  />
+                </motion.svg>
+              </div>
             </NavLink>
           </Flex>
         </Grid>
