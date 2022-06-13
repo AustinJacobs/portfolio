@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '../components/styles/Grid';
 import Flex from '../components/styles/Flex';
-import { Link, Spacer, Text } from '@nextui-org/react';
+import { Link, Spacer, Text, Image } from '@nextui-org/react';
 import styled from 'styled-components';
 import {
   compose,
@@ -12,6 +12,8 @@ import {
   layout,
   grid,
 } from 'styled-system';
+import footerLogo from '../assets/bird_name.png';
+import HorizontalRule from './styles/HorizontalRule';
 
 function Footer() {
   const FooterContainer = styled.div`
@@ -26,14 +28,14 @@ function Footer() {
   const FooterInfoBox = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
 
-    grid-column: 1/5;
+    grid-column: 1/4;
     text-align: center;
   `;
 
   const FooterDate = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
 
-    grid-column: 1/5;
+    grid-column: 1/4;
     text-align: center;
   `;
 
@@ -55,6 +57,7 @@ function Footer() {
           </Grid>
         </FooterInfoBox>
         <Spacer />
+
         <Grid gridColumn='1'>
           <Flex justifySelf='center' alignSelf='center'>
             <Link
@@ -80,7 +83,14 @@ function Footer() {
             </Link>
           </Flex>
         </Grid>
-        <Spacer />
+        <Spacer/>
+        <Grid className='footer-logo'>
+          <Flex justifySelf='center' alignSelf='center'>
+            <Link className='footer-a' href='/'>
+              <Image width='250px' src={footerLogo} alt='Logo Image' />
+            </Link>
+          </Flex>
+        </Grid>
         <FooterDate>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>

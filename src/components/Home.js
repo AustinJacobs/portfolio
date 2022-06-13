@@ -170,7 +170,7 @@ function Home() {
             size='1em'
             weight='normal'
             css={{ textRendering: 'auto', marginTop: '1em' }}>
-            I am a husband and (Paw)ther to our dog Kai. In my free time I
+            I am a husband and (Paw)ther. In my free time I
             participate in archery competitions, and many other outdoor
             activities.
           </Text>

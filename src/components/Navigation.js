@@ -15,7 +15,7 @@ import {
   grid,
 } from 'styled-system';
 import { Pivot as Hamburger } from 'hamburger-react';
-import logo from '../assets/bird_logo_color.png';
+import logo from '../assets/bird-logo-color_adobe_express.svg';
 import { motion } from 'framer-motion';
 
 const icon = {
@@ -75,8 +75,13 @@ function Navigation() {
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
             <NavLink to='/'>
-              {/* <Image className='logo' width={50} src={logo} alt='Logo Image' /> */}
-              <div className='container'>
+              <Image
+                className='logo'
+                width={50}
+                src={logo}
+                alt='Logo Image'
+              />
+              {/* <div className='container logo'>
                 <motion.svg
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 100 100'
@@ -92,7 +97,7 @@ function Navigation() {
                     }}
                   />
                 </motion.svg>
-              </div>
+              </div> */}
             </NavLink>
           </Flex>
         </Grid>

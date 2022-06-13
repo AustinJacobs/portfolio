@@ -92,6 +92,11 @@ html {
   margin: 50px auto;
 }
 
+.footer-logo {
+  grid-column: 1/4;
+  margin: 1em 0 0 0;
+}
+
 @media only screen and (min-width: 768px) {
   .hamburger {
     right: 100px
