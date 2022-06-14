@@ -15,7 +15,7 @@ import {
   grid,
 } from 'styled-system';
 import { Pivot as Hamburger } from 'hamburger-react';
-import logo from '../assets/bird-logo-color_adobe_express.svg';
+import logo from '../assets/bird_logo_color.png';
 import { motion } from 'framer-motion';
 
 const icon = {
