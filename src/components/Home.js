@@ -32,7 +32,7 @@ const HomeTopGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 150px 1em 0 1em;
+  margin: 150px 1.5em 0 1.5em;
   text-align: center;
   align-items: center;
 
@@ -49,7 +49,7 @@ const HomeAboutGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 100px 1em 0 1em;
+  margin: 100px 1.5em 0 1.5em;
   text-align: center;
 
   @media only screen and (min-width: 992px) {
@@ -89,7 +89,6 @@ const AboutTextContainer = styled.div`
     grid-row: 1/2;
   }
 `;
-
 
 function Home() {
   // React hooks used to check the window size.
@@ -141,7 +140,6 @@ function Home() {
               </Button>
             </NavLink>
           </ButtonContainer>
-          {/* {isMobile ? <HorizontalRule /> : ''} */}
         </TitleContainer>
         <TopImageContainer>
           <Image

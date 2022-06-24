@@ -9,7 +9,6 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Text } from '@nextui-org/react';
 
 const ExperienceTopGrid = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
@@ -26,7 +25,7 @@ const ExperienceMainGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 50px 1em 50px 1em;
+  margin: 50px 1.5em 50px 1.5em;
   text-align: center;
   align-items: center;
 

@@ -26,7 +26,7 @@ const WorkMainGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 50px 1em 50px 1em;
+  margin: 50px 1.5em 50px 1.5em;
   text-align: center;
   align-items: center;
 

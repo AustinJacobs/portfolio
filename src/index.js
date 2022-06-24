@@ -1,41 +1,25 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Navigation, Footer, Home, Experience, Work } from './components';
-import reportWebVitals from './reportWebVitals';
+import { Navigation, Footer, Home, Experience, Work, 
+ArticleDetail, ArticlesGrid } from './components';
 import GlobalStyles from './components/styles/Global';
-import { NextUIProvider } from '@nextui-org/react'; // Add createTheme and uncomment other code to add theme switch.
-// import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { NextUIProvider } from '@nextui-org/react';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { createPrismicLink } from 'apollo-link-prismic';
 
-// // 2. Call `createTheme` and pass your custom values
-// const lightTheme = createTheme({
-//   type: 'light',
-//   theme: {
-//     colors: {
-//       myColor: '#ff4ecd',
-//     }
-//   }, // optional
-// });
-
-// const darkTheme = createTheme({
-//   type: 'dark',
-//   theme: {
-//     colors: {
-//       myColor: '#000000',
-//     }
-//   }, // optional
-// });
+const client = new ApolloClient({
+  link: createPrismicLink({
+    uri: `${process.env.REACT_APP_API_URL}`,
+    accessToken: `${process.env.REACT_APP_ACCESS_TOKEN}`,
+  }),
+  cache: new InMemoryCache(),
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    {/* <NextThemesProvider
-      defaultTheme='system'
-      attribute='class'
-      value={{
-        light: lightTheme.className,
-        dark: darkTheme.className,
-      }}> */}
+    <ApolloProvider client={client}>
       <NextUIProvider>
         <GlobalStyles />
         <Router>
@@ -44,15 +28,12 @@ root.render(
             <Route path='/' element={<Home />} />
             <Route path='/experience' element={<Experience />} />
             <Route path='/work' element={<Work />} />
+            <Route path='/blog' element={<ArticlesGrid />} />
+            <Route path='blog/:articleUid' element={<ArticleDetail />} />
           </Routes>
           <Footer />
         </Router>
       </NextUIProvider>
-    {/* </NextThemesProvider> */}
+    </ApolloProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

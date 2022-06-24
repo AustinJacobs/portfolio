@@ -52,14 +52,14 @@ html {
   z-index: 100;
   position: fixed;
   top: 30px;
-  right: 30px
+  right: 40px
 }
 
 .logo {
   z-index: 100;
   position: fixed;
   top: 30px;
-  left: 30px
+  left: 40px
 }
 
 .menuNav.showMenu {
@@ -84,7 +84,6 @@ html {
 .programmer-img {
   width: 100%;
   margin: 50px auto;
-
 }
 
 .hello-img {
@@ -98,14 +97,6 @@ html {
 }
 
 @media only screen and (min-width: 768px) {
-  .hamburger {
-    right: 100px
-  }
-
-  .logo {
-    left: 100px
-  }
-
   .programmer-img {
     width: 90%;
   }
