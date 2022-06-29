@@ -23,6 +23,7 @@ function Footer() {
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 2em;
+    margin-top: 4em;
   `;
 
   const FooterInfoBox = styled.div`

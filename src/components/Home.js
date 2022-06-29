@@ -125,7 +125,7 @@ function Home() {
             I am Austin Jacobs.
           </Text>
           <Text size='2em' weight='normal' css={{ lineHeight: '1.15' }}>
-            Frontend Web Developer
+            Full Stack Web Developer
           </Text>
           <HorizontalRule />
           <ButtonContainer>
@@ -135,6 +135,7 @@ function Home() {
                 css={{
                   color: '#ffffff',
                   backgroundColor: '#3f3d54',
+                  zIndex: '1',
                 }}>
                 View Work
               </Button>
