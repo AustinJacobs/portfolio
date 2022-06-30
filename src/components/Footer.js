@@ -51,7 +51,7 @@ function Footer() {
             <Grid>
               <Flex justifySelf='center' alignSelf='center'>
                 <Text size='3em' weight='extrabold'>
-                  Let's connect and get started.
+                  Let's connect.
                 </Text>
               </Flex>
             </Grid>
