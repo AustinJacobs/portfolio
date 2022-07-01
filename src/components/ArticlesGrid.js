@@ -20,16 +20,6 @@ import {
 import Ring from 'react-cssfx-loading/lib/Ring';
 import HorizontalRuleSmall from './styles/HorizontalRuleSmall';
 
-const BlogTopGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 50px 1em 0 1em;
-  text-align: center;
-  align-items: center;
-`;
-
 const BlogMainGrid = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
 
@@ -37,7 +27,7 @@ const BlogMainGrid = styled.div`
   grid-column: 2/3;
   grid-row: 1;
   grid-template-columns: 1fr;
-  margin: 50px 1.5em 50px 1.5em;
+  margin: 150px 1.5em 50px 1.5em;
   justify-items: center;
   gap: 1em;
 
@@ -53,18 +43,6 @@ const BlogMainGrid = styled.div`
   }
 `;
 
-const SectionHeading = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  font-size: 3em;
-  font-weight: bold;
-  margin: 50px 0 50px 0;
-
-  @media only screen and (min-width: 992px) {
-    font-size: 6em;
-  }
-`;
-
 const FixedSideBar = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
   background-color: white;
@@ -73,7 +51,7 @@ const FixedSideBar = styled.div`
   height: 200px;
   position: -webkit-sticky;
   position: sticky;
-  top: 200px;
+  top: 0px;
   grid-column: 1/2;
   padding: 0 1em 0 1em;
 `;
@@ -89,6 +67,7 @@ const ArticleAndSidebarGrid = styled.div`
 
   display: grid;
   grid-template-columns: 20% auto;
+  margin: 150px 1.5em 50px 1.5em;
 `;
 
 function ArticlesGrid() {
@@ -121,9 +100,6 @@ function ArticlesGrid() {
 
   return (
     <>
-      <BlogTopGrid>
-        <SectionHeading>Blog</SectionHeading>
-      </BlogTopGrid>
       {!isMobile ? (
         <ArticleAndSidebarGrid>
           <FixedSideBar>
@@ -153,6 +129,7 @@ function ArticlesGrid() {
                     w: '100%',
                     h: '350px',
                     maxWidth: '350px',
+                    marginTop: '10px;'
                   }}>
                   <Card.Header
                     css={{

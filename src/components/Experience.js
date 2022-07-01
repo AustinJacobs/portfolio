@@ -9,54 +9,111 @@ import {
   layout,
   grid,
 } from 'styled-system';
-
-const ExperienceTopGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 50px 1em 0 1em;
-  text-align: center;
-  align-items: center;
-`;
+import { Image, Text } from '@nextui-org/react';
+import study from '../assets/undraw_exams_re_4ios.svg';
+import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 
 const ExperienceMainGrid = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 50px 1.5em 50px 1.5em;
+  margin: 150px 1.5em 50px 1.5em;
   text-align: center;
   align-items: center;
+  justify-items: left;
 
-  @media only screen and (min-width: 992px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    margin: 50px 100px 50px 100px;
+  @media only screen and (min-width: 768px) {
+    margin: 150px 4em 0 4em;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    margin: 150px 8em 0 8em;
+  }
+`;
+
+const WrittenExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+`;
+
+const ExperienceDisplay = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 120px auto;
+  margin: 0 0 50px 0;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 300px 1fr;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: 300px 1fr;
     text-align: left;
   }
 `;
 
-const SectionHeading = styled.div`
+const ExperienceDate = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
 
-  font-size: 3em;
-  font-weight: bold;
-  margin: 50px 0 0 0;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: left;
+`;
 
-  @media only screen and (min-width: 992px) {
-    font-size: 6em;
-  }
+const ExperienceText = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  grid-column: 2/3;
+  grid-row: 1/2;
+  text-align: left;
+  padding-left: .5em;
 `;
 
 function Experience() {
   return (
     <div>
-      <ExperienceTopGrid>
-        <SectionHeading>
-          Experience
-        </SectionHeading>
-      </ExperienceTopGrid>
-      <ExperienceMainGrid></ExperienceMainGrid>
+      <ExperienceMainGrid>
+        <WrittenExperienceContainer>
+          <Text h2>Education & Work Experience</Text>
+          <HorizontalRuleMedium />
+          <ExperienceDisplay>
+            <ExperienceDate>
+              <Text css={{ color: '#FF7900' }}>Apr. 2022 - Present</Text>
+            </ExperienceDate>
+            <ExperienceText>
+              <Text h4 css={{ color: '#3F3D54' }}>
+                Leisure Time Inc.
+              </Text>
+              <Text>
+                I am a Full Stack Web Developer intern for Leisure Time Inc. I
+                work on maintaining four websites and I help develop major
+                features for web applications that make the buying process
+                better for our customers.
+              </Text>
+            </ExperienceText>
+          </ExperienceDisplay>
+          <ExperienceDisplay>
+            <ExperienceDate>
+              <Text css={{ color: '#FF7900' }}>Sept. 2019 - Present</Text>
+            </ExperienceDate>
+            <ExperienceText>
+              <Text h4 css={{ color: '#3F3D54' }}>
+                Brigham Young University of Idaho
+              </Text>
+              <Text>
+                I am a university student at Brigham Young University of Idaho
+                where I study Computer Science. I will graduate in April 2023
+                with a Bachelors Degree in Web Design & Development.
+              </Text>
+            </ExperienceText>
+          </ExperienceDisplay>
+        </WrittenExperienceContainer>
+      </ExperienceMainGrid>
     </div>
   );
 }

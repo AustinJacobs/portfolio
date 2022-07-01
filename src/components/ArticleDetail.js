@@ -26,7 +26,7 @@ import logo from '../assets/bird_name.png';
 const ArticleDetailBodyContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
   background-color: 'white';
-  margin: 0 auto;
+  margin: 150px 1.5em 50px 1.5em;
 
   a {
     text-decoration: underline blue;
