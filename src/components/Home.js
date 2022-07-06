@@ -124,7 +124,7 @@ function Home() {
             weight='extrabold'>
             I am Austin Jacobs.
           </Text>
-          <Text size='2em' weight='normal' css={{ lineHeight: '1.15' }}>
+          <Text size='2em' weight='normal' css={{ lineHeight: '1', marginTop: '10px' }}>
             Full Stack Web Developer
           </Text>
           <HorizontalRule />

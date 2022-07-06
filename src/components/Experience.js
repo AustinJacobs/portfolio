@@ -114,6 +114,9 @@ function Experience() {
           </ExperienceDisplay>
         </WrittenExperienceContainer>
       </ExperienceMainGrid>
+      {/* <Image
+        src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+        alt='CSS3 Logo'></Image> */}
     </div>
   );
 }

@@ -13,9 +13,18 @@ import {
   grid,
 } from 'styled-system';
 import footerLogo from '../assets/bird_name.png';
-import HorizontalRule from './styles/HorizontalRule';
 
 function Footer() {
+  const FooterWrapper = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    background-color: #cccccc;
+  `;
+
+
   const FooterContainer = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
     display: grid;
@@ -44,65 +53,67 @@ function Footer() {
   const date = current.getFullYear();
 
   return (
-    <FooterContainer>
-      <Grid gridTemplateColumns='1fr 1fr 1fr'>
-        <FooterInfoBox>
-          <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
+    <FooterWrapper>
+      <FooterContainer>
+        <Grid gridTemplateColumns='1fr 1fr 1fr'>
+          <FooterInfoBox>
+            <Grid gridTemplateColumns='1fr' gridTemplateRows='1fr'>
+              <Grid>
+                <Flex justifySelf='center' alignSelf='center'>
+                  <Text size='3em' weight='extrabold'>
+                    Let's connect.
+                  </Text>
+                </Flex>
+              </Grid>
+            </Grid>
+          </FooterInfoBox>
+          <Spacer />
+
+          <Grid gridColumn='1'>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Link
+                className='footer-a'
+                href='https://www.linkedin.com/in/aust-t-jac/'>
+                <Text h4>Linkedin</Text>
+              </Link>
+            </Flex>
+          </Grid>
+
+          <Grid gridColumn='2'>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Link className='footer-a' href='https://github.com/AustinJacobs'>
+                <Text h4>Github</Text>
+              </Link>
+            </Flex>
+          </Grid>
+
+          <Grid gridColumn='3'>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Link className='footer-a' href='mailto:aust.t.jac@gmail.com'>
+                <Text h4>Email</Text>
+              </Link>
+            </Flex>
+          </Grid>
+          <Spacer />
+          <Grid className='footer-logo'>
+            <Flex justifySelf='center' alignSelf='center'>
+              <Link className='footer-a' href='/'>
+                <Image width='250px' src={footerLogo} alt='Logo Image' />
+              </Link>
+            </Flex>
+          </Grid>
+          <FooterDate>
             <Grid>
               <Flex justifySelf='center' alignSelf='center'>
-                <Text size='3em' weight='extrabold'>
-                  Let's connect.
+                <Text css={{ textRendering: 'auto' }} size='1em'>
+                  Designed & Built by Austin Jacobs ©{date}
                 </Text>
               </Flex>
             </Grid>
-          </Grid>
-        </FooterInfoBox>
-        <Spacer />
-
-        <Grid gridColumn='1'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Link
-              className='footer-a'
-              href='https://www.linkedin.com/in/aust-t-jac/'>
-              <Text h4>Linkedin</Text>
-            </Link>
-          </Flex>
+          </FooterDate>
         </Grid>
-
-        <Grid gridColumn='2'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Link className='footer-a' href='https://github.com/AustinJacobs'>
-              <Text h4>Github</Text>
-            </Link>
-          </Flex>
-        </Grid>
-
-        <Grid gridColumn='3'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Link className='footer-a' href='mailto:aust.t.jac@gmail.com'>
-              <Text h4>Email</Text>
-            </Link>
-          </Flex>
-        </Grid>
-        <Spacer/>
-        <Grid className='footer-logo'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <Link className='footer-a' href='/'>
-              <Image width='250px' src={footerLogo} alt='Logo Image' />
-            </Link>
-          </Flex>
-        </Grid>
-        <FooterDate>
-          <Grid>
-            <Flex justifySelf='center' alignSelf='center'>
-              <Text css={{ textRendering: 'auto' }} size='1em'>
-                Designed & Built by Austin Jacobs ©{date}
-              </Text>
-            </Flex>
-          </Grid>
-        </FooterDate>
-      </Grid>
-    </FooterContainer>
+      </FooterContainer>
+    </FooterWrapper>
   );
 }
 

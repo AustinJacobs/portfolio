@@ -51,7 +51,7 @@ const FixedSideBar = styled.div`
   height: 200px;
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
+  top: 250px;
   grid-column: 1/2;
   padding: 0 1em 0 1em;
 `;
