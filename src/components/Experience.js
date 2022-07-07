@@ -76,7 +76,7 @@ const ExperienceText = styled.div`
 
 function Experience() {
   return (
-    <div>
+    <>
       <ExperienceMainGrid>
         <WrittenExperienceContainer>
           <Text h2>Education & Work Experience</Text>
@@ -117,7 +117,7 @@ function Experience() {
       {/* <Image
         src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
         alt='CSS3 Logo'></Image> */}
-    </div>
+    </>
   );
 }
 
