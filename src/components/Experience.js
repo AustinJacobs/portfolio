@@ -9,8 +9,7 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Image, Text } from '@nextui-org/react';
-import study from '../assets/undraw_exams_re_4ios.svg';
+import { Image, Text, Tooltip } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 
 const ExperienceMainGrid = styled.div`
@@ -18,7 +17,7 @@ const ExperienceMainGrid = styled.div`
 
   display: grid;
   grid-template-columns: 1fr;
-  margin: 150px 1.5em 50px 1.5em;
+  margin: 150px 1.5em 0px 1.5em;
   text-align: center;
   align-items: center;
   justify-items: left;
@@ -71,7 +70,35 @@ const ExperienceText = styled.div`
   grid-column: 2/3;
   grid-row: 1/2;
   text-align: left;
-  padding-left: .5em;
+  padding-left: 0.5em;
+`;
+
+const CodeExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+`;
+
+const CodeExperienceIconsGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  margin: 8px 0 50px 0;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
 `;
 
 function Experience() {
@@ -113,10 +140,68 @@ function Experience() {
             </ExperienceText>
           </ExperienceDisplay>
         </WrittenExperienceContainer>
+        <CodeExperienceContainer>
+          <Text h2>Development Languages & Tools</Text>
+          <HorizontalRuleMedium />
+          <CodeExperienceIconsGrid>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'HTML 5'}
+              css={{ backgroundColor: '#ff7900' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+                alt='HTML5 Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'CSS3'}
+              css={{ backgroundColor: '#ff7900' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+                alt='CSS3 Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Vanilla JavaScript'}
+              css={{ backgroundColor: '#ff7900' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+                alt='JS Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'React.js'}
+              css={{ backgroundColor: '#ff7900' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+                alt='React.js Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Next.js'}
+              css={{ backgroundColor: '#ff7900' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+                alt='Next.js Logo'
+              />
+            </Tooltip>
+          </CodeExperienceIconsGrid>
+        </CodeExperienceContainer>
       </ExperienceMainGrid>
-      {/* <Image
-        src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
-        alt='CSS3 Logo'></Image> */}
     </>
   );
 }
