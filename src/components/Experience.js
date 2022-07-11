@@ -91,12 +91,40 @@ const CodeExperienceIconsGrid = styled.div`
   margin: 8px 0 50px 0;
 
   @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     gap: 30px;
   }
 
   @media only screen and (min-width: 1300px) {
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 40px;
+  }
+`;
+
+const DesignExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+`;
+
+const DesignExperienceIconsGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  margin: 8px 0 50px 0;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: repeat(8, 1fr);
     gap: 40px;
   }
 `;
@@ -148,7 +176,7 @@ function Experience() {
               hideArrow
               rounded
               content={'HTML 5'}
-              css={{ backgroundColor: '#ff7900' }}>
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
               <Image
                 width='100px'
                 src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
@@ -159,7 +187,7 @@ function Experience() {
               hideArrow
               rounded
               content={'CSS3'}
-              css={{ backgroundColor: '#ff7900' }}>
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
               <Image
                 width='100px'
                 src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
@@ -170,7 +198,7 @@ function Experience() {
               hideArrow
               rounded
               content={'Vanilla JavaScript'}
-              css={{ backgroundColor: '#ff7900' }}>
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
               <Image
                 width='100px'
                 src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
@@ -181,7 +209,7 @@ function Experience() {
               hideArrow
               rounded
               content={'React.js'}
-              css={{ backgroundColor: '#ff7900' }}>
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
               <Image
                 width='100px'
                 src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
@@ -192,15 +220,175 @@ function Experience() {
               hideArrow
               rounded
               content={'Next.js'}
-              css={{ backgroundColor: '#ff7900' }}>
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
               <Image
                 width='100px'
                 src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
                 alt='Next.js Logo'
               />
             </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'MySQL'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+                alt='MySQL Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'GraphQL'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
+                alt='GraphQL Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Firebase'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
+                alt='Firebase Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'PHP'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+                alt='PHP Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Docker'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+                alt='Docker Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Git'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+                alt='Git Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'GitHub'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
+                alt='GitHub Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Node.js'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+                alt='Node.js Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'NPM'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg'
+                alt='NPM Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Yarn'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg'
+                alt='Yarn Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'SASS'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
+                alt='SASS Logo'
+              />
+            </Tooltip>
           </CodeExperienceIconsGrid>
         </CodeExperienceContainer>
+        <DesignExperienceContainer>
+          <Text h2>Design Tools</Text>
+          <HorizontalRuleMedium />
+          <DesignExperienceIconsGrid>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Adobe Illustrator'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'
+                alt='Illustrator Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Adobe Photoshop'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'
+                alt='Photoshop Logo'
+              />
+            </Tooltip>
+            <Tooltip
+              hideArrow
+              rounded
+              content={'Figma'}
+              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+              <Image
+                width='100px'
+                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+                alt='Figma Logo'
+              />
+            </Tooltip>
+          </DesignExperienceIconsGrid>
+        </DesignExperienceContainer>
       </ExperienceMainGrid>
     </>
   );
