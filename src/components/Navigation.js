@@ -74,7 +74,7 @@ function Navigation() {
       <Grid gridTemplateColumns='20px 50px auto 50px 20px'>
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
-            <NavLink to='/'>
+            <NavLink onClick={isOpen ? () => closeMenu() : null} to='/'>
               <Image className='logo' width={50} src={logo} alt='Logo Image' />
             </NavLink>
           </Flex>
