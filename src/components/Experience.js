@@ -9,127 +9,158 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Image, Text, Tooltip } from '@nextui-org/react';
+import { Image, Text, Tooltip, Button } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
-
-const ExperienceMainGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 150px 1.5em 0px 1.5em;
-  text-align: center;
-  align-items: center;
-  justify-items: left;
-
-  @media only screen and (min-width: 768px) {
-    margin: 150px 4em 0 4em;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    margin: 150px 8em 0 8em;
-  }
-`;
-
-const WrittenExperienceContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: left;
-`;
-
-const ExperienceDisplay = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 120px auto;
-  margin: 0 0 50px 0;
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: 300px 1fr;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: 300px 1fr;
-    text-align: left;
-  }
-`;
-
-const ExperienceDate = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  grid-column: 1/2;
-  grid-row: 1/2;
-  text-align: left;
-`;
-
-const ExperienceText = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  grid-column: 2/3;
-  grid-row: 1/2;
-  text-align: left;
-  padding-left: 0.5em;
-`;
-
-const CodeExperienceContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: left;
-`;
-
-const CodeExperienceIconsGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-self: center;
-  margin: 8px 0 50px 0;
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 40px;
-  }
-`;
-
-const DesignExperienceContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 1fr;
-  text-align: left;
-`;
-
-const DesignExperienceIconsGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  gap: 20px;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-self: center;
-  margin: 8px 0 50px 0;
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: repeat(8, 1fr);
-    gap: 40px;
-  }
-`;
+import { DocumentIcon } from './DocumentIcon';
 
 function Experience() {
+  const ExperienceMainGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 150px 1.5em 0px 1.5em;
+    text-align: center;
+    align-items: center;
+    justify-items: left;
+
+    @media only screen and (min-width: 768px) {
+      margin: 150px 4em 0 4em;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      margin: 150px 8em 0 8em;
+    }
+  `;
+
+  const WrittenExperienceContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+  `;
+
+  const ExperienceDisplay = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 120px auto;
+    margin: 0 0 50px 0;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 300px 1fr;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: 300px 1fr;
+      text-align: left;
+    }
+  `;
+
+  const ButtonDisplay = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+    grid-column: 2/3;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 300px 1fr;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: 300px 1fr;
+      text-align: left;
+    }
+  `;
+
+  const ExperienceDate = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    grid-column: 1/2;
+    grid-row: 1/2;
+    text-align: left;
+  `;
+
+  const ExperienceText = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    text-align: left;
+    padding-left: 0.5em;
+  `;
+
+  const ToolsGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  `;
+
+  const CodeExperienceContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+  `;
+
+  const CodeExperienceIconsGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    margin: 8px 0 50px 0;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 40px;
+    }
+  `;
+
+  const DesignExperienceContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: left;
+  `;
+
+  const DesignExperienceIconsGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    margin: 8px 0 50px 0;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: repeat(5, 1fr);
+      gap: 30px;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: repeat(8, 1fr);
+      gap: 40px;
+    }
+  `;
+
+  const openPDF = () => {
+    window.open(
+      'https://drive.google.com/file/d/10pnBr2oqo6Do4yiNAsVJ434myx_eMZjR/view?usp=sharing',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  };
+
   return (
     <>
       <ExperienceMainGrid>
@@ -167,7 +198,22 @@ function Experience() {
               </Text>
             </ExperienceText>
           </ExperienceDisplay>
+          <ExperienceDisplay>
+            <ButtonDisplay>
+              <Button
+                auto
+                onClick={openPDF}
+                icon={<DocumentIcon width={40} />}
+                css={{
+                  color: '#ffffff',
+                  backgroundColor: '#3F3D54',
+                }}>
+                View Resume
+              </Button>
+            </ButtonDisplay>
+          </ExperienceDisplay>
         </WrittenExperienceContainer>
+        <ToolsGrid></ToolsGrid>
         <CodeExperienceContainer>
           <Text h2>Development Languages & Tools</Text>
           <HorizontalRuleMedium />

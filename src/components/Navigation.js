@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import Grid from '../components/styles/Grid';
 import Flex from '../components/styles/Flex';
-import { Text, Image } from '@nextui-org/react';
+import { Text, Image, Button } from '@nextui-org/react';
 import styled from 'styled-components';
-import { useState } from 'react';
 import {
   compose,
   color,
@@ -16,20 +15,7 @@ import {
 } from 'styled-system';
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
-import { motion } from 'framer-motion';
-
-const icon = {
-  hidden: {
-    opacity: 0,
-    pathLength: 0,
-    fill: 'rgba(255, 255, 255, 0)',
-  },
-  visible: {
-    opacity: 1,
-    pathLength: 1,
-    fill: 'rgba(255, 255, 255, 1)',
-  },
-};
+import { DocumentIcon } from './DocumentIcon';
 
 function Navigation() {
   const NavContainer = styled.div`
@@ -53,6 +39,7 @@ function Navigation() {
     height: 90vh;
     width: 100vw;
     max-width: 100%;
+    margin-top: 50px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -63,11 +50,44 @@ function Navigation() {
     }
   `;
 
+  const FixedButtonDisplay = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    position: fixed;
+    top: 33px;
+    right: 130px;
+  `;
+
   const [isOpen, setOpen] = useState(false);
 
   const closeMenu = () => {
     setOpen(false);
   };
+
+  const openPDF = () => {
+    window.open(
+      'https://drive.google.com/file/d/10pnBr2oqo6Do4yiNAsVJ434myx_eMZjR/view?usp=sharing',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  };
+
+  // React hooks used to check the window size.
+  const [isMobile, setIsMobile] = useState(false);
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+  // create an event listener
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+  });
 
   return (
     <NavContainer>
@@ -118,6 +138,22 @@ function Navigation() {
               </NavLink>
             </Flex>
           </Grid>
+          {!isMobile ? (
+            <FixedButtonDisplay>
+              <Button
+                auto
+                onClick={openPDF}
+                icon={<DocumentIcon width={40} />}
+                css={{
+                  color: '#ffffff',
+                  backgroundColor: '#3F3D54',
+                }}>
+                View Resume
+              </Button>
+            </FixedButtonDisplay>
+          ) : (
+            ''
+          )}
         </NavOverlayGrid>
       </NavOverlay>
     </NavContainer>
