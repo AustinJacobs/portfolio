@@ -19,56 +19,9 @@ import {
 } from 'styled-system';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import HorizontalRuleSmall from './styles/HorizontalRuleSmall';
-
-const BlogMainGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-column: 2/3;
-  grid-row: 1;
-  grid-template-columns: 1fr;
-  margin: 150px 1.5em 50px 1.5em;
-  justify-items: center;
-  gap: 1em;
-
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
-    margin: 0 1em 0 1em;
-  }
-
-  @media only screen and (min-width: 1300px) {
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: left;
-  }
-`;
-
-const FixedSideBar = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-  background-color: white;
-  color: #ff7900;
-  width: 100%;
-  height: 200px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 250px;
-  grid-column: 1/2;
-  padding: 0 1em 0 1em;
-`;
-
-const SideBarLinks = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-  display: grid;
-  grid-template-rows: repeat(5, 1fr);
-`;
-
-const ArticleAndSidebarGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-
-  display: grid;
-  grid-template-columns: 20% auto;
-  margin: 150px 1.5em 50px 1.5em;
-`;
+import InstagramFeed from 'react-ig-feed';
+import 'react-ig-feed/dist/index.css';
+import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 
 function ArticlesGrid() {
   // React hooks used to check the window size.
@@ -97,6 +50,65 @@ function ArticlesGrid() {
       </Flex>
     );
   if (error) return `Error! ${error.message}`;
+
+  const BlogMainGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1;
+    grid-template-columns: 1fr;
+    margin: 150px 1.5em 50px 1.5em;
+    justify-items: center;
+    gap: 1em;
+
+    @media only screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+      margin: 0 1em 0 1em;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: 1fr 1fr 1fr;
+      text-align: left;
+    }
+  `;
+
+  const FixedSideBar = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+    background-color: white;
+    color: #ff7900;
+    width: 100%;
+    height: 200px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 250px;
+    grid-column: 1/2;
+    padding: 0 1em 0 1em;
+  `;
+
+  const SideBarLinks = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+  `;
+
+  const ArticleAndSidebarGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 20% auto;
+    margin: 150px 1.5em 50px 1.5em;
+  `;
+
+  const InstagramFeedContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 1em 0 1em 0;
+  `;
 
   return (
     <>
@@ -129,7 +141,7 @@ function ArticlesGrid() {
                     w: '100%',
                     h: '350px',
                     maxWidth: '350px',
-                    marginTop: '10px;'
+                    marginTop: '10px;',
                   }}>
                   <Card.Header
                     css={{
@@ -287,6 +299,14 @@ function ArticlesGrid() {
           ))}
         </BlogMainGrid>
       )}
+      <InstagramFeedContainer>
+        <InstagramFeed
+          token={
+            'IGQVJVd183ZAE5VdmV6RFh1N2tJQ3NvNERPV0szMnpZAdFBlNzVseHQwVTloTy1RdHU4eVR3eGQ1ZA1ZAzaU5TbWZAQblNoMkp0UEN5RUVtc2J5aEZAsZAHpzZAjh3SzU5VHFSSWRvSVd3WjY4a2RxOW16UmJfUQZDZD'
+          }
+          counter='12'
+        />
+      </InstagramFeedContainer>
     </>
   );
 }

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import Grid from '../components/styles/Grid';
 import Flex from '../components/styles/Flex';
-import { Text, Image, Button } from '@nextui-org/react';
+import { Text, Image, Button, Link } from '@nextui-org/react';
 import styled from 'styled-components';
 import {
   compose,
@@ -16,6 +16,7 @@ import {
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 import { DocumentIcon } from './DocumentIcon';
+import { HamburgerMinus } from 'react-animated-burgers';
 
 function Navigation() {
   const NavContainer = styled.div`
@@ -58,12 +59,6 @@ function Navigation() {
     right: 130px;
   `;
 
-  const [isOpen, setOpen] = useState(false);
-
-  const closeMenu = () => {
-    setOpen(false);
-  };
-
   const openPDF = () => {
     window.open(
       'https://drive.google.com/file/d/10pnBr2oqo6Do4yiNAsVJ434myx_eMZjR/view?usp=sharing',
@@ -89,23 +84,39 @@ function Navigation() {
     handleResize();
   });
 
+  const [isActive, setIsActive] = useState(false);
+
+  const toggleButton = useCallback(
+    () => setIsActive((prevState) => !prevState),
+    []
+  );
+
+  const closeMenu = () => {
+    setIsActive(false);
+  };
+
   return (
     <NavContainer>
       <Grid gridTemplateColumns='20px 50px auto 50px 20px'>
         <Grid gridColumn='2'>
           <Flex justifySelf='center' alignSelf='center'>
-            <NavLink onClick={isOpen ? () => closeMenu() : null} to='/'>
-              <Image className='logo' width={50} src={logo} alt='Logo Image' />
+            <NavLink onClick={isActive ? () => closeMenu() : null} to='/'>
+              <Image className='logo' width={45} src={logo} alt='Logo Image' />
             </NavLink>
           </Flex>
         </Grid>
         <Grid gridColumn='4' className='hamburger'>
           <Flex justifySelf='center' alignSelf='center'>
-            <Hamburger size={48} toggled={isOpen} toggle={setOpen} />
+            {/* <Hamburger size={48} toggled={isOpen} toggle={setOpen} /> */}
+            <HamburgerMinus
+              buttonWidth={40}
+              barColor='#3f3d54'
+              {...{ isActive, toggleButton }}
+            />
           </Flex>
         </Grid>
       </Grid>
-      <NavOverlay className={`menuNav ${isOpen ? ' showMenu' : ''}`}>
+      <NavOverlay className={`menuNav ${isActive ? ' showMenu' : ''}`}>
         <NavOverlayGrid marginTop='50px'>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
@@ -140,16 +151,18 @@ function Navigation() {
           </Grid>
           {!isMobile ? (
             <FixedButtonDisplay>
-              <Button
-                auto
-                onClick={openPDF}
-                icon={<DocumentIcon width={40} />}
-                css={{
-                  color: '#ffffff',
-                  backgroundColor: '#3F3D54',
-                }}>
-                View Resume
-              </Button>
+              <Link>
+                <Button
+                  auto
+                  onClick={openPDF}
+                  icon={<DocumentIcon width={40} />}
+                  css={{
+                    color: '#ffffff',
+                    backgroundColor: '#3F3D54',
+                  }}>
+                  View Resume
+                </Button>
+              </Link>
             </FixedButtonDisplay>
           ) : (
             ''

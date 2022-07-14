@@ -23,7 +23,8 @@ import { motion } from 'framer-motion';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import logo from '../assets/bird_name.png';
 
-const ArticleDetailBodyContainer = styled.div`
+function ArticleDetail() {
+  const ArticleDetailBodyContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
   background-color: 'white';
   margin: 150px 1.5em 50px 1.5em;
@@ -47,12 +48,11 @@ const ArticleDetailBodyContainer = styled.div`
   }
 `;
 
-const ArticleImage = styled.img`
-  ${compose(color, space, border, typography, layout, grid)}
-  width: 100%;
-`;
+  const ArticleImage = styled.img`
+    ${compose(color, space, border, typography, layout, grid)}
+    width: 100%;
+  `;
 
-function ArticleDetail() {
   useEffect(() => {
     const body = document.querySelector('#root');
 

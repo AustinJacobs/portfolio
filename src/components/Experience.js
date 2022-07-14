@@ -9,7 +9,7 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Image, Text, Tooltip, Button } from '@nextui-org/react';
+import { Image, Text, Tooltip, Button, Link } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { DocumentIcon } from './DocumentIcon';
 
@@ -192,7 +192,7 @@ function Experience() {
                 Brigham Young University of Idaho
               </Text>
               <Text>
-                I am a university student at Brigham Young University of Idaho
+                I am a university student at Brigham Young University - Idaho
                 where I study Computer Science. I will graduate in April 2023
                 with a Bachelors Degree in Web Design & Development.
               </Text>
@@ -200,20 +200,21 @@ function Experience() {
           </ExperienceDisplay>
           <ExperienceDisplay>
             <ButtonDisplay>
-              <Button
-                auto
-                onClick={openPDF}
-                icon={<DocumentIcon width={40} />}
-                css={{
-                  color: '#ffffff',
-                  backgroundColor: '#3F3D54',
-                }}>
-                View Resume
-              </Button>
+              <Link>
+                <Button
+                  auto
+                  onClick={openPDF}
+                  icon={<DocumentIcon width={40} />}
+                  css={{
+                    color: '#ffffff',
+                    backgroundColor: '#3F3D54',
+                  }}>
+                  View Resume
+                </Button>
+              </Link>
             </ButtonDisplay>
           </ExperienceDisplay>
         </WrittenExperienceContainer>
-        <ToolsGrid></ToolsGrid>
         <CodeExperienceContainer>
           <Text h2>Development Languages & Tools</Text>
           <HorizontalRuleMedium />

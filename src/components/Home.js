@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Text, Image, Button } from '@nextui-org/react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Text, Image, Button, Link } from '@nextui-org/react';
 import styled from 'styled-components';
 import {
   compose,
@@ -13,8 +13,8 @@ import {
 import programmer from '../assets/undraw_programming_re_kg9v.svg';
 import hello from '../assets/undraw_hello_re_3evm.svg';
 import HorizontalRule from './styles/HorizontalRule';
-import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+
+function Home() {
 
 const ButtonContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
@@ -69,7 +69,6 @@ const TopImageContainer = styled.div`
 
 const TitleContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
-
 `;
 
 const AboutImageContainer = styled.div`
@@ -90,7 +89,6 @@ const AboutTextContainer = styled.div`
   }
 `;
 
-function Home() {
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
   //choose the screen size
@@ -124,12 +122,15 @@ function Home() {
             weight='extrabold'>
             I am Austin Jacobs.
           </Text>
-          <Text size='2em' weight='normal' css={{ lineHeight: '1', marginTop: '10px' }}>
+          <Text
+            size='2em'
+            weight='normal'
+            css={{ lineHeight: '1', marginTop: '10px' }}>
             Full Stack Web Developer
           </Text>
           <HorizontalRule />
           <ButtonContainer>
-            <NavLink to='/work'>
+            <Link href='/work'>
               <Button
                 size='md'
                 css={{
@@ -139,7 +140,7 @@ function Home() {
                 }}>
                 View Work
               </Button>
-            </NavLink>
+            </Link>
           </ButtonContainer>
         </TitleContainer>
         <TopImageContainer>
@@ -169,9 +170,8 @@ function Home() {
             size='1em'
             weight='normal'
             css={{ textRendering: 'auto', marginTop: '1em' }}>
-            I am a husband and (Paw)ther. In my free time I
-            participate in archery competitions, and many other outdoor
-            activities.
+            I am a husband and (Paw)ther. In my free time I participate in
+            archery competitions, and many other outdoor activities.
           </Text>
           <Text
             size='1em'
@@ -187,21 +187,10 @@ function Home() {
               </Text>
             </a>
           </Text>
-          {/* {isMobile ? <HorizontalRule /> : ''} */}
         </AboutTextContainer>
         <AboutImageContainer>
           <Image className='hello-img' src={hello} alt='Hello Illustration' />
         </AboutImageContainer>
-        <motion.div
-          className='container'
-          initial={{ scale: 0 }}
-          animate={{ rotate: 180, scale: 1 }}
-          transition={{
-            type: 'spring',
-            stiffness: 260,
-            damping: 20,
-          }}
-        />
       </HomeAboutGrid>
     </div>
   );
