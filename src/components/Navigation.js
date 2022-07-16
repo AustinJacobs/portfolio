@@ -103,7 +103,7 @@ function Navigation() {
         </NavLink>
       </Flex>
 
-      <Flex>
+      <Flex className='hamburger'>
         <HamburgerMinus
           buttonWidth={43}
           barColor='#3f3d54'
