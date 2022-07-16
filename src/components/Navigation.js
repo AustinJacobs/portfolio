@@ -107,9 +107,8 @@ function Navigation() {
         </Grid>
         <Grid gridColumn='4' className='hamburger'>
           <Flex justifySelf='center' alignSelf='center'>
-            {/* <Hamburger size={48} toggled={isOpen} toggle={setOpen} /> */}
             <HamburgerMinus
-              buttonWidth={40}
+              buttonWidth={43}
               barColor='#3f3d54'
               {...{ isActive, toggleButton }}
             />
