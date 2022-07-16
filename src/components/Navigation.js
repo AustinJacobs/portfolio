@@ -37,10 +37,10 @@ function Navigation() {
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
-    height: 90vh;
+    height: 80vh;
     width: 100vw;
     max-width: 100%;
-    margin-top: 50px;
+    margin-top: 150px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -97,24 +97,20 @@ function Navigation() {
 
   return (
     <NavContainer>
-      <Grid gridTemplateColumns='20px 50px auto 50px 20px'>
-        <Grid gridColumn='2'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <NavLink onClick={isActive ? () => closeMenu() : null} to='/'>
-              <Image className='logo' width={45} src={logo} alt='Logo Image' />
-            </NavLink>
-          </Flex>
-        </Grid>
-        <Grid gridColumn='4' className='hamburger'>
-          <Flex justifySelf='center' alignSelf='center'>
-            <HamburgerMinus
-              buttonWidth={43}
-              barColor='#3f3d54'
-              {...{ isActive, toggleButton }}
-            />
-          </Flex>
-        </Grid>
-      </Grid>
+      <Flex>
+        <NavLink onClick={isActive ? () => closeMenu() : null} to='/'>
+          <Image className='logo' width={45} src={logo} alt='Logo Image' />
+        </NavLink>
+      </Flex>
+
+      <Flex>
+        <HamburgerMinus
+          buttonWidth={43}
+          barColor='#3f3d54'
+          {...{ isActive, toggleButton }}
+        />
+      </Flex>
+
       <NavOverlay className={`menuNav ${isActive ? ' showMenu' : ''}`}>
         <NavOverlayGrid marginTop='50px'>
           <Grid>
