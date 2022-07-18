@@ -51,7 +51,7 @@ html {
 .hamburger {
   z-index: 100;
   position: fixed;
-  top: 23px;
+  top: 30px;
   right: 40px
 }
 

@@ -16,7 +16,7 @@ import {
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 import { DocumentIcon } from './DocumentIcon';
-import { HamburgerMinus } from 'react-animated-burgers';
+// import { HamburgerMinus } from 'react-animated-burgers';
 
 function Navigation() {
   const NavContainer = styled.div`
@@ -37,10 +37,10 @@ function Navigation() {
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
-    height: 80vh;
+    height: 100%;
     width: 100vw;
     max-width: 100%;
-    margin-top: 150px;
+    align-content: center;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -55,7 +55,7 @@ function Navigation() {
     ${compose(color, space, border, typography, layout, grid)}
 
     position: fixed;
-    top: 33px;
+    top: 34px;
     right: 130px;
   `;
 
@@ -104,10 +104,11 @@ function Navigation() {
       </Flex>
 
       <Flex className='hamburger'>
-        <HamburgerMinus
-          buttonWidth={43}
+        <Hamburger
+          size={40}
           barColor='#3f3d54'
-          {...{ isActive, toggleButton }}
+          toggle={toggleButton}
+          toggled={isActive}
         />
       </Flex>
 
