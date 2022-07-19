@@ -53,3 +53,22 @@ export function GET_DETAILS(slug) {
 
     return GET_POST_DETAILS;
 }
+
+export const GET_CARDS = gql`
+  {
+    allCards(sortBy: title_ASC) {
+      edges {
+        node {
+          _meta {
+            id
+            uid
+          }
+          title
+          body
+          feature_image
+          link
+        }
+      }
+    }
+  }
+`;

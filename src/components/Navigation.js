@@ -16,7 +16,6 @@ import {
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 import { DocumentIcon } from './DocumentIcon';
-// import { HamburgerMinus } from 'react-animated-burgers';
 
 function Navigation() {
   const NavContainer = styled.div`
