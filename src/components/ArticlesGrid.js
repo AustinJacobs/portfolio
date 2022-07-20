@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import React, { useState, useEffect, useAuth } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GET_POSTS } from '../GraphQL/Queries';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
@@ -24,7 +24,6 @@ import 'react-ig-feed/dist/index.css';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 
 function ArticlesGrid() {
-  const { auth } = useAuth();
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -40,7 +39,7 @@ function ArticlesGrid() {
     window.addEventListener('resize', handleResize);
 
     handleResize();
-  }, [auth]);
+  });
 
   const { loading, error, data } = useQuery(GET_POSTS);
 
