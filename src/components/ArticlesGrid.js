@@ -299,14 +299,14 @@ function ArticlesGrid() {
           ))}
         </BlogMainGrid>
       )}
-      <InstagramFeedContainer>
+      {/* <InstagramFeedContainer>
         <InstagramFeed
           token={
             'IGQVJVd183ZAE5VdmV6RFh1N2tJQ3NvNERPV0szMnpZAdFBlNzVseHQwVTloTy1RdHU4eVR3eGQ1ZA1ZAzaU5TbWZAQblNoMkp0UEN5RUVtc2J5aEZAsZAHpzZAjh3SzU5VHFSSWRvSVd3WjY4a2RxOW16UmJfUQZDZD'
           }
           counter='12'
         />
-      </InstagramFeedContainer>
+      </InstagramFeedContainer> */}
     </>
   );
 }

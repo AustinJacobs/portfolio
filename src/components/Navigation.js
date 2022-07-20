@@ -36,10 +36,9 @@ function Navigation() {
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
-    height: 100%;
+    height: 70vh;
     width: 100vw;
-    max-width: 100%;
-    align-content: center;
+    margin-top: 130px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;

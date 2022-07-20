@@ -14,14 +14,34 @@ import { useQuery } from '@apollo/client';
 import { GET_CARDS } from '../GraphQL/Queries';
 import Flex from './styles/Flex';
 import Ring from 'react-cssfx-loading/lib/Ring';
+import { motion } from 'framer-motion';
 
 function Work() {
   const WorkMainGrid = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr;
     margin: 150px 1em 1em 1em;
+
+    @media only screen and (min-width: 668px) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2em;
+      margin: 150px 4em 1em 4em;
+    }
+
+    @media only screen and (min-width: 968px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2em;
+      margin: 150px 4em 1em 4em;
+    }
+
+    @media only screen and (min-width: 1300px) {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2em;
+      margin: 150px 4em 1em 4em;
+    }
   `;
 
   const { loading, error, data } = useQuery(GET_CARDS);
@@ -35,10 +55,14 @@ function Work() {
   if (error) return `Error! ${error.message}`;
 
   return (
-    <div>
-      <WorkMainGrid>
-        {data.allCards.edges.map((card) => (
-          <div key={card.node._meta.id}>
+    <WorkMainGrid>
+      {data.allCards.edges.map((card) => (
+        <div key={card.node._meta.id}>
+          <motion.div
+            whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <Card
               css={{
                 w: '100%',
@@ -104,10 +128,10 @@ function Work() {
                 </Row>
               </Card.Footer>
             </Card>
-          </div>
-        ))}
-      </WorkMainGrid>
-    </div>
+          </motion.div>
+        </div>
+      ))}
+    </WorkMainGrid>
   );
 }
 
