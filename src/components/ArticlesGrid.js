@@ -1,5 +1,5 @@
 import { useQuery } from '@apollo/client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useAuth } from 'react';
 import { GET_POSTS } from '../GraphQL/Queries';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
@@ -24,9 +24,10 @@ import 'react-ig-feed/dist/index.css';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 
 function ArticlesGrid() {
-  // React hooks used to check the window size.
+  const { auth } = useAuth();
+
   const [isMobile, setIsMobile] = useState(false);
-  //choose the screen size
+
   const handleResize = () => {
     if (window.innerWidth < 768) {
       setIsMobile(true);
@@ -34,12 +35,12 @@ function ArticlesGrid() {
       setIsMobile(false);
     }
   };
-  // create an event listener
+
   useEffect(() => {
     window.addEventListener('resize', handleResize);
 
     handleResize();
-  });
+  }, [auth]);
 
   const { loading, error, data } = useQuery(GET_POSTS);
 
