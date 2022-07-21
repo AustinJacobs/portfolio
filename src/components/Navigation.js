@@ -20,7 +20,6 @@ import { DocumentIcon } from './DocumentIcon';
 function Navigation() {
   const NavContainer = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
-
     margin: 1em 0 1em 0;
 
     @media only screen and (min-width: 768px) {
@@ -34,7 +33,6 @@ function Navigation() {
 
   const NavOverlayGrid = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
-
     display: grid;
     height: 70vh;
     width: 100vw;
@@ -51,7 +49,6 @@ function Navigation() {
 
   const FixedButtonDisplay = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
-
     position: fixed;
     top: 34px;
     right: 130px;

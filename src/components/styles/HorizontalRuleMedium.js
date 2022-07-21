@@ -18,6 +18,7 @@ const HorizontalRuleSmall = styled.div`
   border: 0 none;
   margin-top: 1em;
   margin-bottom: 1em;
+  margin-left: 3px;
   align-self: center;
 `;
 

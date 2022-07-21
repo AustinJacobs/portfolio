@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {
   compose,
@@ -12,6 +12,7 @@ import {
 import { Image, Text, Tooltip, Button, Link } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { DocumentIcon } from './DocumentIcon';
+import { motion } from 'framer-motion';
 
 function Experience() {
   const ExperienceMainGrid = styled.div`
@@ -19,7 +20,7 @@ function Experience() {
 
     display: grid;
     grid-template-columns: 1fr;
-    margin: 150px 1.5em 0px 1.5em;
+    margin: 100px 1.5em 0px 1.5em;
     text-align: center;
     align-items: center;
     justify-items: left;
@@ -29,7 +30,7 @@ function Experience() {
     }
 
     @media only screen and (min-width: 1300px) {
-      margin: 150px 8em 0 8em;
+      margin: 150px 6em 0 6em;
     }
   `;
 
@@ -45,15 +46,15 @@ function Experience() {
     ${compose(color, space, border, typography, layout, grid)}
 
     display: grid;
-    grid-template-columns: 120px auto;
+    grid-template-columns: 1fr;
     margin: 0 0 50px 0;
 
     @media only screen and (min-width: 768px) {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 150px 800px;
     }
 
     @media only screen and (min-width: 1300px) {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 150px 800px;
       text-align: left;
     }
   `;
@@ -83,18 +84,15 @@ function Experience() {
   const ExperienceText = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
 
-    grid-column: 2/3;
-    grid-row: 1/2;
+    grid-column: 1/2;
+    grid-row: 2/3;
     text-align: left;
-    padding-left: 0.5em;
-  `;
 
-  const ToolsGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    text-align: left;
+    @media only screen and (min-width: 768px) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      text-align: left;
+    }
   `;
 
   const CodeExperienceContainer = styled.div`
@@ -161,279 +159,481 @@ function Experience() {
     );
   };
 
+  // React hooks used to check the window size.
+  const [isMobile, setIsMobile] = useState(false);
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+  // create an event listener
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+
+    handleResize();
+  });
+
   return (
     <>
       <ExperienceMainGrid>
         <WrittenExperienceContainer>
-          <Text h2>Education & Work Experience</Text>
-          <HorizontalRuleMedium />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            {!isMobile ? (
+              <Text h1 css={{ fontSize: '80px', lineHeight: '1.1' }}>
+                Work Experience
+              </Text>
+            ) : (
+              <Text h1 css={{ fontSize: '60px' }}>
+                Work Experience
+              </Text>
+            )}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <HorizontalRuleMedium />
+          </motion.div>
           <ExperienceDisplay>
             <ExperienceDate>
-              <Text css={{ color: '#FF7900' }}>Apr. 2022 - Present</Text>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text css={{ color: '#FF7900' }}>Apr. 2022 - Present</Text>
+              </motion.div>
             </ExperienceDate>
             <ExperienceText>
-              <Text h4 css={{ color: '#3F3D54' }}>
-                Leisure Time Inc.
-              </Text>
-              <Text>
-                I am a Full Stack Web Developer intern for Leisure Time Inc. I
-                work on maintaining four websites and I help develop major
-                features for web applications that make the buying process
-                better for our customers.
-              </Text>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text h4 css={{ color: '#3F3D54' }}>
+                  Leisure Time Inc.
+                </Text>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text>
+                  I am a Full Stack Web Developer intern for Leisure Time Inc. I
+                  work on maintaining four websites and I help develop major
+                  features for web applications that make the buying process
+                  better for our customers.
+                </Text>
+              </motion.div>
             </ExperienceText>
           </ExperienceDisplay>
+          {/* <ExperienceDisplay>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <ButtonDisplay>
+                <Link>
+                  <Button
+                    auto
+                    onClick={openPDF}
+                    icon={<DocumentIcon width={40} />}
+                    css={{
+                      color: '#ffffff',
+                      backgroundColor: '#3F3D54',
+                    }}>
+                    View Resume
+                  </Button>
+                </Link>
+              </ButtonDisplay>
+            </motion.div>
+          </ExperienceDisplay> */}
+        </WrittenExperienceContainer>
+        <WrittenExperienceContainer>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            {!isMobile ? (
+              <Text h1 css={{ fontSize: '80px', lineHeight: '1.1' }}>
+                Education Experience
+              </Text>
+            ) : (
+              <Text h1 css={{ fontSize: '60px' }}>
+                Education Experience
+              </Text>
+            )}
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <HorizontalRuleMedium />
+          </motion.div>
           <ExperienceDisplay>
             <ExperienceDate>
-              <Text css={{ color: '#FF7900' }}>Sept. 2019 - Present</Text>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text css={{ color: '#FF7900' }}>Sept. 2019 - Present</Text>
+              </motion.div>
             </ExperienceDate>
             <ExperienceText>
-              <Text h4 css={{ color: '#3F3D54' }}>
-                Brigham Young University of Idaho
-              </Text>
-              <Text>
-                I am a university student at Brigham Young University - Idaho
-                where I study Computer Science. I will graduate in April 2023
-                with a Bachelors Degree in Web Design & Development.
-              </Text>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text h4 css={{ color: '#3F3D54' }}>
+                  Brigham Young University of Idaho
+                </Text>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
+                <Text>
+                  I am a university student at Brigham Young University - Idaho
+                  where I study Computer Science. I will graduate in April 2023
+                  with a Bachelors Degree in Web Design & Development.
+                </Text>
+              </motion.div>
             </ExperienceText>
-          </ExperienceDisplay>
-          <ExperienceDisplay>
-            <ButtonDisplay>
-              <Link>
-                <Button
-                  auto
-                  onClick={openPDF}
-                  icon={<DocumentIcon width={40} />}
-                  css={{
-                    color: '#ffffff',
-                    backgroundColor: '#3F3D54',
-                  }}>
-                  View Resume
-                </Button>
-              </Link>
-            </ButtonDisplay>
           </ExperienceDisplay>
         </WrittenExperienceContainer>
         <CodeExperienceContainer>
-          <Text h2>Development Languages & Tools</Text>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <Text h2>Development Languages & Tools</Text>
+          </motion.div>
           <HorizontalRuleMedium />
           <CodeExperienceIconsGrid>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'HTML 5'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
-                alt='HTML5 Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'CSS3'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
-                alt='CSS3 Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Vanilla JavaScript'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
-                alt='JS Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'React.js'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
-                alt='React.js Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Next.js'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
-                alt='Next.js Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'MySQL'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
-                alt='MySQL Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'GraphQL'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
-                alt='GraphQL Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Firebase'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
-                alt='Firebase Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'PHP'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
-                alt='PHP Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Docker'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
-                alt='Docker Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Git'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
-                alt='Git Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'GitHub'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
-                alt='GitHub Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Node.js'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
-                alt='Node.js Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'NPM'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg'
-                alt='NPM Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Yarn'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg'
-                alt='Yarn Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'SASS'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
-                alt='SASS Logo'
-              />
-            </Tooltip>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'HTML 5'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg'
+                  alt='HTML5 Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'CSS3'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg'
+                  alt='CSS3 Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Vanilla JavaScript'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg'
+                  alt='JS Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'React.js'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
+                  alt='React.js Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Next.js'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg'
+                  alt='Next.js Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'MySQL'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg'
+                  alt='MySQL Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'GraphQL'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'
+                  alt='GraphQL Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Firebase'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg'
+                  alt='Firebase Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'PHP'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg'
+                  alt='PHP Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Docker'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
+                  alt='Docker Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Git'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg'
+                  alt='Git Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'GitHub'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg'
+                  alt='GitHub Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Node.js'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg'
+                  alt='Node.js Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'NPM'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg'
+                  alt='NPM Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Yarn'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/yarn/yarn-original.svg'
+                  alt='Yarn Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'SASS'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
+                  alt='SASS Logo'
+                />
+              </Tooltip>
+            </motion.div>
           </CodeExperienceIconsGrid>
         </CodeExperienceContainer>
         <DesignExperienceContainer>
-          <Text h2>Design Tools</Text>
-          <HorizontalRuleMedium />
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <Text h2>Design Tools</Text>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <HorizontalRuleMedium />
+          </motion.div>
           <DesignExperienceIconsGrid>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Adobe Illustrator'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'
-                alt='Illustrator Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Adobe Photoshop'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'
-                alt='Photoshop Logo'
-              />
-            </Tooltip>
-            <Tooltip
-              hideArrow
-              rounded
-              content={'Figma'}
-              css={{ backgroundColor: '#3f3d54', color: 'white' }}>
-              <Image
-                width='100px'
-                src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
-                alt='Figma Logo'
-              />
-            </Tooltip>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Adobe Illustrator'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg'
+                  alt='Illustrator Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Adobe Photoshop'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg'
+                  alt='Photoshop Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Figma'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg'
+                  alt='Figma Logo'
+                />
+              </Tooltip>
+            </motion.div>
           </DesignExperienceIconsGrid>
         </DesignExperienceContainer>
       </ExperienceMainGrid>

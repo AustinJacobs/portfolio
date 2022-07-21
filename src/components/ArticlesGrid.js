@@ -22,6 +22,7 @@ import HorizontalRuleSmall from './styles/HorizontalRuleSmall';
 import InstagramFeed from 'react-ig-feed';
 import 'react-ig-feed/dist/index.css';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
+import { motion } from 'framer-motion';
 
 function ArticlesGrid() {
 
@@ -136,12 +137,104 @@ function ArticlesGrid() {
           <BlogMainGrid>
             {data.allArticles.edges.map((article) => (
               <div key={article.node._meta.id}>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  viewport={{ once: true }}>
+                  <Card
+                    css={{
+                      w: '100%',
+                      h: '350px',
+                      maxWidth: '350px',
+                      marginTop: '10px;',
+                    }}>
+                    <Card.Header
+                      css={{
+                        position: 'absolute',
+                        zIndex: 1,
+                        top: 0,
+                      }}>
+                      <Col>
+                        <Text
+                          size={12}
+                          weight='bold'
+                          transform='uppercase'
+                          color='white'>
+                          {article.node.category}
+                        </Text>
+                        <Text h2 color='white'>
+                          {article.node.title[0].text}
+                        </Text>
+                      </Col>
+                    </Card.Header>
+                    <Card.Body css={{ p: 0 }}>
+                      <Card.Image
+                        src={article.node.feature_image.url}
+                        width='100%'
+                        height='100%'
+                        objectFit='cover'
+                        alt={article.node.feature_image.alt}
+                      />
+                    </Card.Body>
+                    <Card.Footer
+                      css={{
+                        position: 'absolute',
+                        bottom: 0,
+                        zIndex: 1,
+                      }}>
+                      <Row>
+                        <Col>
+                          <Text color='#fff' size={12}>
+                            Published
+                          </Text>
+                          <Text color='#fff' size={12}>
+                            {format(
+                              new Date(article.node.published_at),
+                              'MMM dd, yyyy'
+                            )}
+                          </Text>
+                        </Col>
+                        <Col>
+                          <Row justify='flex-end'>
+                            <Link to={article.node._meta.uid}>
+                              <Button
+                                flat
+                                auto
+                                rounded
+                                color='text'
+                                css={{ backgroundColor: '#ffffff' }}>
+                                <Text
+                                  css={{ color: 'inherit' }}
+                                  size={12}
+                                  weight='bold'
+                                  transform='uppercase'>
+                                  Read Post
+                                </Text>
+                              </Button>
+                            </Link>
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Card.Footer>
+                  </Card>
+                </motion.div>
+              </div>
+            ))}
+          </BlogMainGrid>
+        </ArticleAndSidebarGrid>
+      ) : (
+        <BlogMainGrid>
+          {data.allArticles.edges.map((article) => (
+            <div key={article.node._meta.id}>
+              <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                viewport={{ once: true }}>
                 <Card
                   css={{
                     w: '100%',
                     h: '350px',
                     maxWidth: '350px',
-                    marginTop: '10px;',
                   }}>
                   <Card.Header
                     css={{
@@ -212,89 +305,7 @@ function ArticlesGrid() {
                     </Row>
                   </Card.Footer>
                 </Card>
-              </div>
-            ))}
-          </BlogMainGrid>
-        </ArticleAndSidebarGrid>
-      ) : (
-        <BlogMainGrid>
-          {data.allArticles.edges.map((article) => (
-            <div key={article.node._meta.id}>
-              <Card
-                css={{
-                  w: '100%',
-                  h: '350px',
-                  maxWidth: '350px',
-                }}>
-                <Card.Header
-                  css={{
-                    position: 'absolute',
-                    zIndex: 1,
-                    top: 0,
-                  }}>
-                  <Col>
-                    <Text
-                      size={12}
-                      weight='bold'
-                      transform='uppercase'
-                      color='white'>
-                      {article.node.category}
-                    </Text>
-                    <Text h2 color='white'>
-                      {article.node.title[0].text}
-                    </Text>
-                  </Col>
-                </Card.Header>
-                <Card.Body css={{ p: 0 }}>
-                  <Card.Image
-                    src={article.node.feature_image.url}
-                    width='100%'
-                    height='100%'
-                    objectFit='cover'
-                    alt={article.node.feature_image.alt}
-                  />
-                </Card.Body>
-                <Card.Footer
-                  css={{
-                    position: 'absolute',
-                    bottom: 0,
-                    zIndex: 1,
-                  }}>
-                  <Row>
-                    <Col>
-                      <Text color='#fff' size={12}>
-                        Published
-                      </Text>
-                      <Text color='#fff' size={12}>
-                        {format(
-                          new Date(article.node.published_at),
-                          'MMM dd, yyyy'
-                        )}
-                      </Text>
-                    </Col>
-                    <Col>
-                      <Row justify='flex-end'>
-                        <Link to={article.node._meta.uid}>
-                          <Button
-                            flat
-                            auto
-                            rounded
-                            color='text'
-                            css={{ backgroundColor: '#ffffff' }}>
-                            <Text
-                              css={{ color: 'inherit' }}
-                              size={12}
-                              weight='bold'
-                              transform='uppercase'>
-                              Read Post
-                            </Text>
-                          </Button>
-                        </Link>
-                      </Row>
-                    </Col>
-                  </Row>
-                </Card.Footer>
-              </Card>
+              </motion.div>
             </div>
           ))}
         </BlogMainGrid>
