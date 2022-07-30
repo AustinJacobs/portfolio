@@ -26,15 +26,15 @@ function Work() {
     margin: 100px 1em 1em 1em;
 
     @media only screen and (min-width: 668px) {
-      margin: 150px 4em 1em 4em;
+      margin: 0 4em 1em 4em;
     }
 
     @media only screen and (min-width: 968px) {
-      margin: 150px 4em 1em 4em;
+      margin: 0 4em 1em 4em;
     }
 
     @media only screen and (min-width: 1300px) {
-      margin: 150px 6em 1em 6em;
+      margin: 0 6em 1em 6em;
     }
   `;
 
@@ -49,20 +49,29 @@ function Work() {
     @media only screen and (min-width: 668px) {
       grid-template-columns: repeat(2, 1fr);
       gap: 2em;
-      margin: 1em 4em 1em 4em;
+      margin: 1em 4em 0em 4em;
     }
 
     @media only screen and (min-width: 968px) {
       grid-template-columns: repeat(3, 1fr);
       gap: 2em;
-      margin: 1em 4em 1em 4em;
+      margin: 1em 4em 0em 4em;
     }
 
     @media only screen and (min-width: 1300px) {
       grid-template-columns: repeat(4, 1fr);
       gap: 2em;
-      margin: 1em 6em 1em 6em;
+      margin: 1em 6em 0em 6em;
     }
+  `;
+
+  const PageHeader = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    margin: 8em 1em 6em 1em;
   `;
 
   // React hooks used to check the window size.
@@ -94,6 +103,24 @@ function Work() {
 
   return (
     <>
+      <PageHeader>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}>
+          {!isMobile ? (
+            <Text
+              h1
+              css={{ fontSize: '90px', lineHeight: '1.1', color: '#3F3D54' }}>
+              Work
+            </Text>
+          ) : (
+            <Text h1 css={{ fontSize: '60px', color: '#3F3D54' }}>
+              Work
+            </Text>
+          )}
+        </motion.div>
+      </PageHeader>
       {!isMobile ? (
         <>
           <WorkWrapper>
@@ -101,7 +128,7 @@ function Work() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
               viewport={{ once: true }}>
-              <Text h1 css={{ fontSize: '80px', lineHeight: '1.1' }}>
+              <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
                 Hosted Projects
               </Text>
             </motion.div>
@@ -196,7 +223,7 @@ function Work() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
               viewport={{ once: true }}>
-              <Text h1 css={{ fontSize: '70px' }}>
+              <Text h1 css={{ fontSize: '40px' }}>
                 Hosted Projects
               </Text>
             </motion.div>

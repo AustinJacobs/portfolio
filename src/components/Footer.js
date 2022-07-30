@@ -21,6 +21,8 @@ function Footer() {
     width: 100%;
     display: grid;
     justify-content: center;
+    background-color: #cccccc;
+    margin-top: 2em;
   `;
 
   const FooterContainer = styled.div`
@@ -30,7 +32,7 @@ function Footer() {
     max-width: 800px;
     margin: 0 auto;
     margin-bottom: 2em;
-    margin-top: 4em;
+    margin-top: 2em;
   `;
 
   const FooterInfoBox = styled.div`

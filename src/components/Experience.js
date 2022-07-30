@@ -26,11 +26,11 @@ function Experience() {
     justify-items: left;
 
     @media only screen and (min-width: 768px) {
-      margin: 150px 4em 0 4em;
+      margin: 0 4em 0 4em;
     }
 
     @media only screen and (min-width: 1300px) {
-      margin: 150px 6em 0 6em;
+      margin: 0 6em 0 6em;
     }
   `;
 
@@ -40,6 +40,7 @@ function Experience() {
     display: grid;
     grid-template-columns: 1fr;
     text-align: left;
+    margin-bottom: 2em;
   `;
 
   const ExperienceDisplay = styled.div`
@@ -101,6 +102,7 @@ function Experience() {
     display: grid;
     grid-template-columns: 1fr;
     text-align: left;
+    margin-bottom: 2em;
   `;
 
   const CodeExperienceIconsGrid = styled.div`
@@ -138,7 +140,7 @@ function Experience() {
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
     justify-self: center;
-    margin: 8px 0 50px 0;
+    margin: 8px 0 0px 0;
 
     @media only screen and (min-width: 768px) {
       grid-template-columns: repeat(5, 1fr);
@@ -151,13 +153,14 @@ function Experience() {
     }
   `;
 
-  const openPDF = () => {
-    window.open(
-      'https://drive.google.com/file/d/10pnBr2oqo6Do4yiNAsVJ434myx_eMZjR/view?usp=sharing',
-      '_blank',
-      'noopener,noreferrer'
-    );
-  };
+  const PageHeader = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    margin: 8em 1em 6em 1em;
+  `;
 
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
@@ -178,6 +181,24 @@ function Experience() {
 
   return (
     <>
+      <PageHeader>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}>
+          {!isMobile ? (
+            <Text
+              h1
+              css={{ fontSize: '90px', lineHeight: '1.1', color: '#3F3D54' }}>
+              Experience
+            </Text>
+          ) : (
+            <Text h1 css={{ fontSize: '60px', color: '#3F3D54' }}>
+              Experience
+            </Text>
+          )}
+        </motion.div>
+      </PageHeader>
       <ExperienceMainGrid>
         <WrittenExperienceContainer>
           <motion.div
@@ -185,11 +206,11 @@ function Experience() {
             whileInView={{ opacity: 1, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
-              <Text h1 css={{ fontSize: '80px', lineHeight: '1.1' }}>
+              <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
                 Work Experience
               </Text>
             ) : (
-              <Text h1 css={{ fontSize: '60px' }}>
+              <Text h1 css={{ fontSize: '40px' }}>
                 Work Experience
               </Text>
             )}
@@ -259,11 +280,11 @@ function Experience() {
             whileInView={{ opacity: 1, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
-              <Text h1 css={{ fontSize: '80px', lineHeight: '1.1' }}>
+              <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
                 Education Experience
               </Text>
             ) : (
-              <Text h1 css={{ fontSize: '60px' }}>
+              <Text h1 css={{ fontSize: '40px' }}>
                 Education Experience
               </Text>
             )}
@@ -310,7 +331,15 @@ function Experience() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, transition: { duration: 1 } }}
             viewport={{ once: true }}>
-            <Text h2>Development Languages & Tools</Text>
+            {!isMobile ? (
+              <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
+                Development Languages & Tools
+              </Text>
+            ) : (
+              <Text h1 css={{ fontSize: '40px' }}>
+                Development Languages & Tools
+              </Text>
+            )}
           </motion.div>
           <HorizontalRuleMedium />
           <CodeExperienceIconsGrid>
@@ -577,7 +606,15 @@ function Experience() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1, transition: { duration: 1 } }}
             viewport={{ once: true }}>
-            <Text h2>Design Tools</Text>
+            {!isMobile ? (
+              <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
+                Design Tools
+              </Text>
+            ) : (
+              <Text h1 css={{ fontSize: '40px' }}>
+                Design Tools
+              </Text>
+            )}
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}

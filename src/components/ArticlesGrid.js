@@ -25,7 +25,6 @@ import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { motion } from 'framer-motion';
 
 function ArticlesGrid() {
-
   const [isMobile, setIsMobile] = useState(false);
 
   const handleResize = () => {
@@ -99,7 +98,7 @@ function ArticlesGrid() {
 
     display: grid;
     grid-template-columns: 20% auto;
-    margin: 150px 1.5em 50px 1.5em;
+    margin: 0px 1.5em 0em 1.5em;
   `;
 
   const InstagramFeedContainer = styled.div`
@@ -111,8 +110,35 @@ function ArticlesGrid() {
     margin: 1em 0 1em 0;
   `;
 
+  const PageHeader = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    margin: 8em 1em 6em 1em;
+  `;
+
   return (
     <>
+      <PageHeader>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}>
+          {!isMobile ? (
+            <Text
+              h1
+              css={{ fontSize: '90px', lineHeight: '1.1', color: '#3F3D54' }}>
+              Blog
+            </Text>
+          ) : (
+            <Text h1 css={{ fontSize: '60px', color: '#3F3D54' }}>
+              Blog
+            </Text>
+          )}
+        </motion.div>
+      </PageHeader>
       {!isMobile ? (
         <ArticleAndSidebarGrid>
           <FixedSideBar>
