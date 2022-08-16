@@ -64,6 +64,7 @@ export const GET_CARDS = gql`
             uid
           }
           title
+          headline
           body
           feature_image
           link

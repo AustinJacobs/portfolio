@@ -9,7 +9,7 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Image, Text, Tooltip, Button, Link } from '@nextui-org/react';
+import { Image, Text, Tooltip, Spacer } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { DocumentIcon } from './DocumentIcon';
 import { motion } from 'framer-motion';
@@ -244,10 +244,19 @@ function Experience() {
                 whileInView={{ opacity: 1, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text>
-                  I am a Full Stack Web Developer intern for Leisure Time Inc. I
-                  work on maintaining four websites and I help develop major
-                  features for web applications that make the buying process
-                  better for our customers.
+                  I am a Full Stack Web Developer at Leisure Time Inc. Some of
+                  my responsibilities include writing new code to produce major
+                  updates and features for four websites. I help maintain an
+                  online shop that sells thousands of products each month and
+                  serves customers all over the United States.
+                </Text>
+                <Spacer x={1} />
+                <Text>
+                  Another vital role that I play is designing new webpages and
+                  features using UX/UI design standards that make our sites easy
+                  for customers to use. Working alongside a dedicated graphic
+                  designer, I design the look and feel of many parts of our
+                  websites.
                 </Text>
               </motion.div>
             </ExperienceText>
@@ -321,6 +330,10 @@ function Experience() {
                   I am a university student at Brigham Young University - Idaho
                   where I study Computer Science. I will graduate in April 2023
                   with a Bachelors Degree in Web Design & Development.
+                </Text>
+                <Spacer x={2} />
+                <Text>
+                  At the beginning of my degree, I was asked to choose which aspect of development I wanted to focus on most. I chose to put most of my attention towards learning the development/programming side of developing web apps. However, I have plenty of experience designing websites and web applications that are founded on sound design principles. 
                 </Text>
               </motion.div>
             </ExperienceText>

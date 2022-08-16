@@ -235,7 +235,7 @@ const AboutTextContainer = styled.div`
               When it comes to learning code, I am most efficient at teaching
               myself. However, I am currently a university student studying Web
               Design & Development. I will graduate in the spring of 2023. I
-              currently intern for{' '}
+              currently work for{' '}
               <a href='https://leisuretimeinc.com/about-us'>
                 <Text span css={{ color: '#FF7900' }}>
                   Leisure Time Inc.

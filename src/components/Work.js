@@ -9,7 +9,7 @@ import {
   layout,
   grid,
 } from 'styled-system';
-import { Card, Col, Row, Button, Text, Link } from '@nextui-org/react';
+import { Card, Col, Row, Button, Text, Link, Popover } from '@nextui-org/react';
 import { useQuery } from '@apollo/client';
 import { GET_CARDS } from '../GraphQL/Queries';
 import Flex from './styles/Flex';
@@ -168,7 +168,7 @@ function Work() {
                           weight='bold'
                           transform='uppercase'
                           color='white'>
-                          {card.node.body[0].text}
+                          {card.node.headline[0].text}
                         </Text>
                       </Col>
                     </Card.Header>
@@ -188,15 +188,40 @@ function Work() {
                         zIndex: 1,
                       }}>
                       <Row>
+                        <Popover>
+                          <Popover.Trigger>
+                            <Button
+                              auto
+                              flat
+                              css={{
+                                backgroundColor: '#cccccc',
+                                color: '#3f3d54',
+                              }}>
+                              Project Info
+                            </Button>
+                          </Popover.Trigger>
+                          <Popover.Content>
+                            <Text
+                              css={{
+                                p: '$10',
+                                backgroundColor: '#3f3d54',
+                                color: 'white',
+                              }}>
+                              {card.node.body[0].text}
+                            </Text>
+                          </Popover.Content>
+                        </Popover>
                         <Col>
                           <Row justify='flex-end'>
                             <Link target='_blank' href={card.node.link[0].text}>
                               <Button
                                 flat
                                 auto
-                                rounded
                                 color='text'
-                                css={{ backgroundColor: '#ffffff' }}>
+                                css={{
+                                  backgroundColor: '#ffffff',
+                                  color: '#3f3d54',
+                                }}>
                                 <Text
                                   css={{ color: 'inherit' }}
                                   size={12}
@@ -284,6 +309,29 @@ function Work() {
                         zIndex: 1,
                       }}>
                       <Row>
+                        <Popover>
+                          <Popover.Trigger>
+                            <Button
+                              auto
+                              flat
+                              css={{
+                                backgroundColor: '#cccccc',
+                                color: '#3f3d54',
+                              }}>
+                              Project Info
+                            </Button>
+                          </Popover.Trigger>
+                          <Popover.Content>
+                            <Text
+                              css={{
+                                p: '$10',
+                                backgroundColor: '#3f3d54',
+                                color: 'white',
+                              }}>
+                              {card.node.body[0].text}
+                            </Text>
+                          </Popover.Content>
+                        </Popover>
                         <Col>
                           <Row justify='flex-end'>
                             <Link target='_blank' href={card.node.link[0].text}>
