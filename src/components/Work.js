@@ -16,6 +16,7 @@ import Flex from './styles/Flex';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import { motion } from 'framer-motion';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
+import {FaInfo} from 'react-icons/fa'
 
 function Work() {
   const WorkWrapper = styled.div`
@@ -158,16 +159,17 @@ function Work() {
                         position: 'absolute',
                         zIndex: 1,
                         top: 0,
+                        backgroundColor: '#FFFFFF',
                       }}>
                       <Col>
-                        <Text h2 color='white'>
+                        <Text h2 color='#3f3d54'>
                           {card.node.title[0].text}
                         </Text>
                         <Text
                           size={12}
                           weight='bold'
                           transform='uppercase'
-                          color='white'>
+                          color='#FF7900'>
                           {card.node.headline[0].text}
                         </Text>
                       </Col>
@@ -193,11 +195,18 @@ function Work() {
                             <Button
                               auto
                               flat
+                              color='text'
                               css={{
-                                backgroundColor: '#cccccc',
-                                color: '#3f3d54',
+                                backgroundColor: '#3f3d54',
+                                color: '#FFFFFF',
                               }}>
-                              Project Info
+                              <Text
+                                css={{ color: 'inherit' }}
+                                size={12}
+                                weight='bold'
+                                transform='uppercase'>
+                                <FaInfo/>
+                              </Text>
                             </Button>
                           </Popover.Trigger>
                           <Popover.Content>
@@ -219,8 +228,8 @@ function Work() {
                                 auto
                                 color='text'
                                 css={{
-                                  backgroundColor: '#ffffff',
-                                  color: '#3f3d54',
+                                  backgroundColor: '#ff7900',
+                                  color: '#ffffff',
                                 }}>
                                 <Text
                                   css={{ color: 'inherit' }}
@@ -279,16 +288,17 @@ function Work() {
                         position: 'absolute',
                         zIndex: 1,
                         top: 0,
+                        backgroundColor: '#FFFFFF',
                       }}>
                       <Col>
-                        <Text h2 color='white'>
+                        <Text h2 color='#3f3d54'>
                           {card.node.title[0].text}
                         </Text>
                         <Text
                           size={12}
                           weight='bold'
                           transform='uppercase'
-                          color='white'>
+                          color='#FF7900'>
                           {card.node.body[0].text}
                         </Text>
                       </Col>
@@ -315,10 +325,16 @@ function Work() {
                               auto
                               flat
                               css={{
-                                backgroundColor: '#cccccc',
-                                color: '#3f3d54',
+                                backgroundColor: '#3f3d54',
+                                color: '#FFFFFF',
                               }}>
-                              Project Info
+                              <Text
+                                css={{ color: 'inherit' }}
+                                size={12}
+                                weight='bold'
+                                transform='uppercase'>
+                                Project Info
+                              </Text>
                             </Button>
                           </Popover.Trigger>
                           <Popover.Content>
@@ -338,7 +354,6 @@ function Work() {
                               <Button
                                 flat
                                 auto
-                                rounded
                                 color='text'
                                 css={{ backgroundColor: '#ffffff' }}>
                                 <Text
