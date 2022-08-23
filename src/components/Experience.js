@@ -255,7 +255,7 @@ function Experience() {
                   Another vital role that I play is designing new webpages and
                   features using UX/UI design standards that make our sites easy
                   for customers to use. Working alongside a dedicated graphic
-                  designer, I design the look and feel of many parts of our
+                  designer, I help design the look and feel of many parts of our
                   websites.
                 </Text>
               </motion.div>

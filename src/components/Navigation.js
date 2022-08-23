@@ -16,6 +16,7 @@ import {
 import { Pivot as Hamburger } from 'hamburger-react';
 import logo from '../assets/bird_logo_color.png';
 import { DocumentIcon } from './DocumentIcon';
+import { motion } from 'framer-motion';
 
 function Navigation() {
   const NavContainer = styled.div`
@@ -112,7 +113,14 @@ function Navigation() {
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
               <NavLink className='nav-a' onClick={() => closeMenu()} to='/'>
-                <Text h1>Home</Text>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  viewport={{ once: true }}
+                  animate={{ y: [-600, 0] }}
+                  transition={{ ease: 'easeOut', duration: 0.4 }}>
+                  <Text h1>Home</Text>
+                </motion.div>
               </NavLink>
             </Flex>
           </Grid>
@@ -122,21 +130,42 @@ function Navigation() {
                 className='nav-a'
                 onClick={() => closeMenu()}
                 to='/experience'>
-                <Text h1>Experience</Text>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  viewport={{ once: true }}
+                  animate={{ y: [-600, 0] }}
+                  transition={{ ease: 'easeOut', duration: 0.6 }}>
+                  <Text h1>Experience</Text>
+                </motion.div>
               </NavLink>
             </Flex>
           </Grid>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
               <NavLink className='nav-a' onClick={() => closeMenu()} to='/work'>
-                <Text h1>Work</Text>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  viewport={{ once: true }}
+                  animate={{ y: [-600, 0] }}
+                  transition={{ ease: 'easeOut', duration: 0.8 }}>
+                  <Text h1>Work</Text>
+                </motion.div>
               </NavLink>
             </Flex>
           </Grid>
           <Grid>
             <Flex justifySelf='center' alignSelf='center'>
               <NavLink className='nav-a' onClick={() => closeMenu()} to='/blog'>
-                <Text h1>Blog</Text>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  viewport={{ once: true }}
+                  animate={{ y: [-600, 0] }}
+                  transition={{ ease: 'easeOut', duration: 1 }}>
+                  <Text h1>Blog</Text>
+                </motion.div>
               </NavLink>
             </Flex>
           </Grid>

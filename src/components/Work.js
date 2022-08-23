@@ -130,7 +130,7 @@ function Work() {
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
-                Hosted Projects
+                Live Projects
               </Text>
             </motion.div>
             <motion.div
@@ -159,17 +159,16 @@ function Work() {
                         position: 'absolute',
                         zIndex: 1,
                         top: 0,
-                        backgroundColor: '#FFFFFF',
                       }}>
                       <Col>
-                        <Text h2 color='#3f3d54'>
+                        <Text h2 color='white'>
                           {card.node.title[0].text}
                         </Text>
                         <Text
                           size={12}
                           weight='bold'
                           transform='uppercase'
-                          color='#FF7900'>
+                          color='white'>
                           {card.node.headline[0].text}
                         </Text>
                       </Col>
@@ -228,8 +227,8 @@ function Work() {
                                 auto
                                 color='text'
                                 css={{
-                                  backgroundColor: '#ff7900',
-                                  color: '#ffffff',
+                                  backgroundColor: 'white',
+                                  color: '#3f3d54',
                                 }}>
                                 <Text
                                   css={{ color: 'inherit' }}
@@ -258,7 +257,7 @@ function Work() {
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Text h1 css={{ fontSize: '40px' }}>
-                Hosted Projects
+                Live Projects
               </Text>
             </motion.div>
             <motion.div
@@ -288,17 +287,16 @@ function Work() {
                         position: 'absolute',
                         zIndex: 1,
                         top: 0,
-                        backgroundColor: '#FFFFFF',
                       }}>
                       <Col>
-                        <Text h2 color='#3f3d54'>
+                        <Text h2 color='white'>
                           {card.node.title[0].text}
                         </Text>
                         <Text
                           size={12}
                           weight='bold'
                           transform='uppercase'
-                          color='#FF7900'>
+                          color='white'>
                           {card.node.body[0].text}
                         </Text>
                       </Col>
@@ -333,7 +331,7 @@ function Work() {
                                 size={12}
                                 weight='bold'
                                 transform='uppercase'>
-                                Project Info
+                                <FaInfo/>
                               </Text>
                             </Button>
                           </Popover.Trigger>
