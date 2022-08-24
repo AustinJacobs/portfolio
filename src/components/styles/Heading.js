@@ -9,7 +9,7 @@ import {
   layout,
 } from 'styled-system';
 
-const Heading = styled.h6`
+const Heading = styled.h1`
   ${compose(color, shadow, space, border, typography, layout)}
   margin: 0;
   padding: 0;

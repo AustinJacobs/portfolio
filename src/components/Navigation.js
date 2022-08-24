@@ -35,9 +35,9 @@ function Navigation() {
   const NavOverlayGrid = styled.div`
     ${compose(color, space, border, typography, layout, grid)}
     display: grid;
-    height: 70vh;
+    height: 80vh;
     width: 100vw;
-    margin-top: 130px;
+    margin-top: 100px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;

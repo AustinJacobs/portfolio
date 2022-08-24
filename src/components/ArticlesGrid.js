@@ -21,7 +21,6 @@ import Ring from 'react-cssfx-loading/lib/Ring';
 import HorizontalRuleSmall from './styles/HorizontalRuleSmall';
 import InstagramFeed from 'react-ig-feed';
 import 'react-ig-feed/dist/index.css';
-import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { motion } from 'framer-motion';
 
 function ArticlesGrid() {
@@ -179,17 +178,18 @@ function ArticlesGrid() {
                         position: 'absolute',
                         zIndex: 1,
                         top: 0,
+                        backgroundColor: '#FFFFFF',
                       }}>
                       <Col>
+                        <Text h3 color='black'>
+                          {article.node.title[0].text}
+                        </Text>
                         <Text
                           size={12}
                           weight='bold'
                           transform='uppercase'
-                          color='white'>
+                          color='#FF7900'>
                           {article.node.category}
-                        </Text>
-                        <Text h2 color='white'>
-                          {article.node.title[0].text}
                         </Text>
                       </Col>
                     </Card.Header>
@@ -207,6 +207,7 @@ function ArticlesGrid() {
                         position: 'absolute',
                         bottom: 0,
                         zIndex: 1,
+                        backgroundColor: '#3f3d54',
                       }}>
                       <Row>
                         <Col>

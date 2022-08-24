@@ -21,13 +21,12 @@ import {
 } from 'styled-system';
 import { motion } from 'framer-motion';
 import Ring from 'react-cssfx-loading/lib/Ring';
-import logo from '../assets/bird_name.png';
 
 function ArticleDetail() {
   const ArticleDetailBodyContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
   background-color: 'white';
-  margin: 150px 1.5em 50px 1.5em;
+  margin: 20px 1.5em 50px 1.5em;
 
   a {
     text-decoration: underline blue;
@@ -51,6 +50,8 @@ function ArticleDetail() {
   const ArticleImage = styled.img`
     ${compose(color, space, border, typography, layout, grid)}
     width: 100%;
+    height: 500px;
+    object-fit: cover;
   `;
 
   useEffect(() => {
@@ -74,28 +75,33 @@ function ArticleDetail() {
   console.log(data.article.body);
 
   return (
-    <React.Fragment>
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1, transition: { duration: 1 } }}
+      viewport={{ once: true }}>
       <Box>
-        {/* <ArticleImage
+        <ArticleImage
           p={0}
           m={0}
-          mt={5}
-          src={logo}
-          alt='Site logo with name.'
-        /> */}
+          mt='80px'
+          px='2.5em'
+          src={data.article.feature_image.url}
+          alt='Feature Image'
+        />
         <ArticleDetailBodyContainer px={['2em', null, null, '6em', null]}>
           <Heading
             level={1}
-            fontWeight='normal'
+            fontWeight='bold'
             fontSize={['3xl', null, null, '5xl', null]}
-            m='0'
-            mt={4.5}>
+            m='0'>
             {data.article.title[0].text}
           </Heading>
-          <Text color='red.600' mt={0} as='p'>
-            Published on{' '}
-            {format(new Date(data.article.published_at), 'MMM dd, yyyy')}
-          </Text>
+          <Box mb={4}>
+            <Text color='#FF7900' mt={0} as='p'>
+              Published on{' '}
+              {format(new Date(data.article.published_at), 'MMM dd, yyyy')}
+            </Text>
+          </Box>
           <Box>
             {data.article.body
               .filter((index) => index.type === 'inline_text')
@@ -109,26 +115,9 @@ function ArticleDetail() {
                 );
               })}
           </Box>
-          <motion.button
-            whileHover={{ y: -2 }}
-            whileTap={{ y: -2 }}
-            style={{ background: 'transparent', border: 'none', padding: '0' }}>
-            {/* <Button
-              width='100px'
-              height='40px'
-              border='none'
-              borderRadius='5px'
-              bg='red.600'
-              color='white'
-              fontSize={'md'}
-              onClick={() => history.goBack()}
-              mb={5}>
-              Back
-            </Button> */}
-          </motion.button>
         </ArticleDetailBodyContainer>
       </Box>
-    </React.Fragment>
+    </motion.div>
   );
 }
 
