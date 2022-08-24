@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { GET_POSTS } from '../GraphQL/Queries';
 import { format } from 'date-fns';
 import { Link } from 'react-router-dom';
-// import Box from './styles/Box';
-// import Heading from './styles/Heading';
 import Flex from './styles/Flex';
 import styled from 'styled-components';
 import { Card, Col, Row, Button, Text } from '@nextui-org/react';
@@ -19,8 +17,6 @@ import {
 } from 'styled-system';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import HorizontalRuleSmall from './styles/HorizontalRuleSmall';
-import InstagramFeed from 'react-ig-feed';
-import 'react-ig-feed/dist/index.css';
 import { motion } from 'framer-motion';
 
 function ArticlesGrid() {
@@ -337,14 +333,6 @@ function ArticlesGrid() {
           ))}
         </BlogMainGrid>
       )}
-      {/* <InstagramFeedContainer>
-        <InstagramFeed
-          token={
-            'IGQVJVd183ZAE5VdmV6RFh1N2tJQ3NvNERPV0szMnpZAdFBlNzVseHQwVTloTy1RdHU4eVR3eGQ1ZA1ZAzaU5TbWZAQblNoMkp0UEN5RUVtc2J5aEZAsZAHpzZAjh3SzU5VHFSSWRvSVd3WjY4a2RxOW16UmJfUQZDZD'
-          }
-          counter='12'
-        />
-      </InstagramFeedContainer> */}
     </>
   );
 }
