@@ -113,10 +113,8 @@ const AboutTextContainer = styled.div`
         <TitleContainer>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            animate={{ y: [-700, 0] }}
-            transition={{ ease: 'easeOut', duration: 1, delay: 0.3 }}>
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
             <Text
               css={{ color: '#FF7900', lineHeight: '1.15' }}
               size='3em'
@@ -126,10 +124,8 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            animate={{ x: [-600, 0] }}
-            transition={{ ease: 'easeOut', duration: 1, delay: 0.3 }}>
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
             <Text
               css={{ color: '#3f3d54', lineHeight: '1.15' }}
               size='4em'
@@ -139,10 +135,8 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            animate={{ x: [-900, 0] }}
-            transition={{ ease: 'easeOut', duration: 1, delay: 0.5 }}>
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
             <Text
               size='2em'
               weight='normal'
@@ -152,18 +146,14 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            animate={{ y: [700, 0] }}
-            transition={{ ease: 'easeOut', duration: 1, delay: 0.3 }}>
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
             <HorizontalRule />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            animate={{ y: [900, 0] }}
-            transition={{ ease: 'easeOut', duration: 1, delay: 0.5 }}>
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
             <ButtonContainer>
               <Link href='/work'>
                 <Button
