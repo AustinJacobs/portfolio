@@ -21,8 +21,9 @@ function Footer() {
     width: 100%;
     display: grid;
     justify-content: center;
-    background-color: #cccccc;
-    margin-top: 2em;
+    background-color: #ffffff;
+    margin-top: 3em;
+    border-top: 2px solid #ff7900;
   `;
 
   const FooterContainer = styled.div`

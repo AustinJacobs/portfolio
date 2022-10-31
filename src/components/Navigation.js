@@ -37,7 +37,7 @@ function Navigation() {
     display: grid;
     height: 80vh;
     width: 100vw;
-    margin-top: 160px;
+    margin-top: 120px;
 
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;

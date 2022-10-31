@@ -11,7 +11,6 @@ import {
 } from 'styled-system';
 import { Image, Text, Tooltip, Spacer } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
-import { DocumentIcon } from './DocumentIcon';
 import { motion } from 'framer-motion';
 
 function Experience() {
@@ -21,8 +20,6 @@ function Experience() {
     display: grid;
     grid-template-columns: 1fr;
     margin: 100px 1.5em 0px 1.5em;
-    text-align: center;
-    align-items: center;
     justify-items: left;
 
     @media only screen and (min-width: 768px) {
@@ -51,25 +48,11 @@ function Experience() {
     margin: 0 0 50px 0;
 
     @media only screen and (min-width: 768px) {
-      grid-template-columns: 150px 800px;
+      grid-template-columns: 15% 65%;
     }
 
     @media only screen and (min-width: 1300px) {
-      grid-template-columns: 150px 800px;
-      text-align: left;
-    }
-  `;
-
-  const ButtonDisplay = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-    grid-column: 2/3;
-
-    @media only screen and (min-width: 768px) {
-      grid-template-columns: 300px 1fr;
-    }
-
-    @media only screen and (min-width: 1300px) {
-      grid-template-columns: 300px 1fr;
+      grid-template-columns: 15% 65%;
       text-align: left;
     }
   `;
@@ -80,6 +63,7 @@ function Experience() {
     grid-column: 1/2;
     grid-row: 1/2;
     text-align: left;
+    margin-right: 20px;
   `;
 
   const ExperienceText = styled.div`
@@ -111,7 +95,7 @@ function Experience() {
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-self: center;
+    justify-self: left;
     margin: 8px 0 50px 0;
 
     @media only screen and (min-width: 768px) {
