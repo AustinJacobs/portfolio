@@ -16,7 +16,7 @@ import Flex from './styles/Flex';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import { motion } from 'framer-motion';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
-import {FaInfo} from 'react-icons/fa'
+import {FaEllipsisV} from 'react-icons/fa'
 
 function Work() {
   const WorkWrapper = styled.div`
@@ -189,22 +189,22 @@ function Work() {
                         zIndex: 1,
                       }}>
                       <Row>
-                        <Popover>
+                        <Popover placement='bottom-left'>
                           <Popover.Trigger>
                             <Button
                               auto
                               flat
                               color='text'
                               css={{
-                                backgroundColor: '#3f3d54',
+                                backgroundColor: '#ff7900',
                                 color: '#FFFFFF',
                               }}>
                               <Text
                                 css={{ color: 'inherit' }}
-                                size={12}
+                                size={20}
                                 weight='bold'
                                 transform='uppercase'>
-                                <FaInfo/>
+                                <FaEllipsisV/>
                               </Text>
                             </Button>
                           </Popover.Trigger>
@@ -214,6 +214,7 @@ function Work() {
                                 p: '$10',
                                 backgroundColor: '#3f3d54',
                                 color: 'white',
+                                width: '300px'
                               }}>
                               {card.node.body[0].text}
                             </Text>
@@ -323,15 +324,15 @@ function Work() {
                               auto
                               flat
                               css={{
-                                backgroundColor: '#3f3d54',
+                                backgroundColor: '#ff7900',
                                 color: '#FFFFFF',
                               }}>
                               <Text
                                 css={{ color: 'inherit' }}
-                                size={12}
+                                size={20}
                                 weight='bold'
                                 transform='uppercase'>
-                                <FaInfo/>
+                                <FaEllipsisV/>
                               </Text>
                             </Button>
                           </Popover.Trigger>
