@@ -13,139 +13,139 @@ import { Image, Text, Tooltip, Spacer } from '@nextui-org/react';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
 import { motion } from 'framer-motion';
 
-function Experience() {
-  const ExperienceMainGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+const ExperienceMainGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 100px 1.5em 0px 1.5em;
-    justify-items: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 100px 1.5em 0px 1.5em;
+  justify-items: left;
 
-    @media only screen and (min-width: 768px) {
-      margin: 0 4em 0 4em;
-    }
+  @media only screen and (min-width: 768px) {
+    margin: 0 4em 0 4em;
+  }
 
-    @media only screen and (min-width: 1300px) {
-      margin: 0 6em 0 6em;
-    }
-  `;
+  @media only screen and (min-width: 1300px) {
+    margin: 0 6em 0 6em;
+  }
+`;
 
-  const WrittenExperienceContainer = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+const WrittenExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+  margin-bottom: 2em;
+`;
+
+const ExperienceDisplay = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 0 0 50px 0;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: 15% 65%;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: 15% 65%;
     text-align: left;
-    margin-bottom: 2em;
-  `;
+  }
+`;
 
-  const ExperienceDisplay = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+const ExperienceDate = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 0 0 50px 0;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  text-align: left;
+  margin-right: 20px;
+`;
 
-    @media only screen and (min-width: 768px) {
-      grid-template-columns: 15% 65%;
-    }
+const ExperienceText = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    @media only screen and (min-width: 1300px) {
-      grid-template-columns: 15% 65%;
-      text-align: left;
-    }
-  `;
+  grid-column: 1/2;
+  grid-row: 2/3;
+  text-align: left;
 
-  const ExperienceDate = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    grid-column: 1/2;
+  @media only screen and (min-width: 768px) {
+    grid-column: 2/3;
     grid-row: 1/2;
     text-align: left;
-    margin-right: 20px;
-  `;
+  }
+`;
 
-  const ExperienceText = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+const CodeExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    grid-column: 1/2;
-    grid-row: 2/3;
-    text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+  margin-bottom: 2em;
+`;
 
-    @media only screen and (min-width: 768px) {
-      grid-column: 2/3;
-      grid-row: 1/2;
-      text-align: left;
-    }
-  `;
+const CodeExperienceIconsGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-  const CodeExperienceContainer = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: left;
+  margin: 8px 0 50px 0;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: left;
-    margin-bottom: 2em;
-  `;
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+  }
 
-  const CodeExperienceIconsGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 40px;
+  }
+`;
 
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-self: left;
-    margin: 8px 0 50px 0;
+const DesignExperienceContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    @media only screen and (min-width: 768px) {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 30px;
-    }
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: left;
+`;
 
-    @media only screen and (min-width: 1300px) {
-      grid-template-columns: repeat(8, 1fr);
-      gap: 40px;
-    }
-  `;
+const DesignExperienceIconsGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-  const DesignExperienceContainer = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-self: center;
+  margin: 8px 0 0px 0;
 
-    display: grid;
-    grid-template-columns: 1fr;
-    text-align: left;
-  `;
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+  }
 
-  const DesignExperienceIconsGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 40px;
+  }
+`;
 
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-self: center;
-    margin: 8px 0 0px 0;
+const PageHeader = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
 
-    @media only screen and (min-width: 768px) {
-      grid-template-columns: repeat(5, 1fr);
-      gap: 30px;
-    }
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  margin: 8em 1em 6em 1em;
+`;
 
-    @media only screen and (min-width: 1300px) {
-      grid-template-columns: repeat(8, 1fr);
-      gap: 40px;
-    }
-  `;
-
-  const PageHeader = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    margin: 8em 1em 6em 1em;
-  `;
-
+function Experience() {
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
   //choose the screen size
@@ -317,7 +317,12 @@ function Experience() {
                 </Text>
                 <Spacer x={2} />
                 <Text>
-                  At the beginning of my degree, I was asked to choose which aspect of development I wanted to focus on most. I chose to put most of my attention towards learning the development/programming side of developing web apps. However, I have plenty of experience designing websites and web applications that are founded on sound design principles. 
+                  At the beginning of my degree, I was asked to choose which
+                  aspect of development I wanted to focus on most. I chose to
+                  put most of my attention towards learning the
+                  development/programming side of developing web apps. However,
+                  I have plenty of experience designing websites and web
+                  applications that are founded on sound design principles.
                 </Text>
               </motion.div>
             </ExperienceText>
@@ -593,6 +598,22 @@ function Experience() {
                   width='100px'
                   src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg'
                   alt='SASS Logo'
+                />
+              </Tooltip>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}>
+              <Tooltip
+                hideArrow
+                rounded
+                content={'Angular'}
+                css={{ backgroundColor: '#3f3d54', color: 'white' }}>
+                <Image
+                  width='100px'
+                  src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg'
+                  alt='Angular Logo'
                 />
               </Tooltip>
             </motion.div>

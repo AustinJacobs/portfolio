@@ -18,43 +18,43 @@ import logo from '../assets/bird_logo_color.png';
 import { DocumentIcon } from './DocumentIcon';
 import { motion } from 'framer-motion';
 
+const NavContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+  margin: 1em 0 1em 0;
+
+  @media only screen and (min-width: 768px) {
+    margin-left: 2em;
+  }
+`;
+
+const NavOverlay = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+`;
+
+const NavOverlayGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+  display: grid;
+  height: 80vh;
+  width: 100vw;
+  margin-top: 120px;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+`;
+
+const FixedButtonDisplay = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+  position: fixed;
+  top: 34px;
+  right: 130px;
+`;
+
 function Navigation() {
-  const NavContainer = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-    margin: 1em 0 1em 0;
-
-    @media only screen and (min-width: 768px) {
-      margin-left: 2em;
-    }
-  `;
-
-  const NavOverlay = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-  `;
-
-  const NavOverlayGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-    display: grid;
-    height: 80vh;
-    width: 100vw;
-    margin-top: 120px;
-
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-
-    @media only screen and (max-width: 768px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr 1fr 1fr;
-    }
-  `;
-
-  const FixedButtonDisplay = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-    position: fixed;
-    top: 34px;
-    right: 130px;
-  `;
-
   const openPDF = () => {
     window.open(
       'https://drive.google.com/file/d/10pnBr2oqo6Do4yiNAsVJ434myx_eMZjR/view?usp=sharing',

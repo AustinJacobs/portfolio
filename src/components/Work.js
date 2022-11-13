@@ -16,65 +16,64 @@ import Flex from './styles/Flex';
 import Ring from 'react-cssfx-loading/lib/Ring';
 import { motion } from 'framer-motion';
 import HorizontalRuleMedium from './styles/HorizontalRuleMedium';
-import {FaEllipsisV} from 'react-icons/fa'
+import { FaEllipsisV } from 'react-icons/fa';
+
+const WorkWrapper = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 100px 1em 1em 1em;
+
+  @media only screen and (min-width: 668px) {
+    margin: 0 4em 1em 4em;
+  }
+
+  @media only screen and (min-width: 968px) {
+    margin: 0 4em 1em 4em;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    margin: 0 6em 1em 6em;
+  }
+`;
+
+const WorkMainGrid = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  margin: 1em 1em 1em 1em;
+
+  @media only screen and (min-width: 668px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+    margin: 1em 4em 0em 4em;
+  }
+
+  @media only screen and (min-width: 968px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    margin: 1em 4em 0em 4em;
+  }
+
+  @media only screen and (min-width: 1300px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2em;
+    margin: 1em 6em 0em 6em;
+  }
+`;
+
+const PageHeader = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr;
+  margin: 8em 1em 6em 1em;
+`;
 
 function Work() {
-  const WorkWrapper = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 100px 1em 1em 1em;
-
-    @media only screen and (min-width: 668px) {
-      margin: 0 4em 1em 4em;
-    }
-
-    @media only screen and (min-width: 968px) {
-      margin: 0 4em 1em 4em;
-    }
-
-    @media only screen and (min-width: 1300px) {
-      margin: 0 6em 1em 6em;
-    }
-  `;
-
-  const WorkMainGrid = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    margin: 1em 1em 1em 1em;
-
-    @media only screen and (min-width: 668px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2em;
-      margin: 1em 4em 0em 4em;
-    }
-
-    @media only screen and (min-width: 968px) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2em;
-      margin: 1em 4em 0em 4em;
-    }
-
-    @media only screen and (min-width: 1300px) {
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2em;
-      margin: 1em 6em 0em 6em;
-    }
-  `;
-
-  const PageHeader = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    margin: 8em 1em 6em 1em;
-  `;
-
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
   //choose the screen size
@@ -204,7 +203,7 @@ function Work() {
                                 size={20}
                                 weight='bold'
                                 transform='uppercase'>
-                                <FaEllipsisV/>
+                                <FaEllipsisV />
                               </Text>
                             </Button>
                           </Popover.Trigger>
@@ -214,7 +213,7 @@ function Work() {
                                 p: '$10',
                                 backgroundColor: '#3f3d54',
                                 color: 'white',
-                                width: '300px'
+                                width: '300px',
                               }}>
                               {card.node.body[0].text}
                             </Text>
@@ -298,7 +297,7 @@ function Work() {
                           weight='bold'
                           transform='uppercase'
                           color='white'>
-                          {card.node.body[0].text}
+                          {card.node.headline[0].text}
                         </Text>
                       </Col>
                     </Card.Header>
@@ -332,7 +331,7 @@ function Work() {
                                 size={20}
                                 weight='bold'
                                 transform='uppercase'>
-                                <FaEllipsisV/>
+                                <FaEllipsisV />
                               </Text>
                             </Button>
                           </Popover.Trigger>

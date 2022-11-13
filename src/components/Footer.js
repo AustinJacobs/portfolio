@@ -14,42 +14,42 @@ import {
 } from 'styled-system';
 import footerLogo from '../assets/bird_name.png';
 
+const FooterWrapper = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  background-color: #ffffff;
+  margin-top: 3em;
+  border-top: 2px solid #ff7900;
+`;
+
+const FooterContainer = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+  display: grid;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  margin-top: 2em;
+`;
+
+const FooterInfoBox = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  grid-column: 1/4;
+  text-align: center;
+`;
+
+const FooterDate = styled.div`
+  ${compose(color, space, border, typography, layout, grid)}
+
+  grid-column: 1/4;
+  text-align: center;
+`;
+
 function Footer() {
-  const FooterWrapper = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    width: 100%;
-    display: grid;
-    justify-content: center;
-    background-color: #ffffff;
-    margin-top: 3em;
-    border-top: 2px solid #ff7900;
-  `;
-
-  const FooterContainer = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-    display: grid;
-    justify-content: center;
-    max-width: 800px;
-    margin: 0 auto;
-    margin-bottom: 2em;
-    margin-top: 2em;
-  `;
-
-  const FooterInfoBox = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    grid-column: 1/4;
-    text-align: center;
-  `;
-
-  const FooterDate = styled.div`
-    ${compose(color, space, border, typography, layout, grid)}
-
-    grid-column: 1/4;
-    text-align: center;
-  `;
-
   const current = new Date();
   const date = current.getFullYear();
 

@@ -22,8 +22,7 @@ import {
 import { motion } from 'framer-motion';
 import Ring from 'react-cssfx-loading/lib/Ring';
 
-function ArticleDetail() {
-  const ArticleDetailBodyContainer = styled.div`
+const ArticleDetailBodyContainer = styled.div`
   ${compose(color, space, border, typography, layout, grid)}
   background-color: 'white';
   margin: 20px 1.5em 50px 1.5em;
@@ -47,13 +46,14 @@ function ArticleDetail() {
   }
 `;
 
-  const ArticleImage = styled.img`
-    ${compose(color, space, border, typography, layout, grid)}
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-  `;
+const ArticleImage = styled.img`
+  ${compose(color, space, border, typography, layout, grid)}
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+`;
 
+function ArticleDetail() {
   useEffect(() => {
     const body = document.querySelector('#root');
 

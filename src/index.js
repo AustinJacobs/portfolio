@@ -7,6 +7,9 @@ import GlobalStyles from './components/styles/Global';
 import { NextUIProvider } from '@nextui-org/react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createPrismicLink } from 'apollo-link-prismic';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize(process.env.TRACKING_ID);
 
 const client = new ApolloClient({
   link: createPrismicLink({
