@@ -1,15 +1,23 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { Navigation, Footer, Home, Experience, Work, 
-ArticleDetail, ArticlesGrid } from './components';
+import {
+  Navigation,
+  Footer,
+  Home,
+  Experience,
+  Work,
+  ArticleDetail,
+  ArticlesGrid,
+} from './components';
 import GlobalStyles from './components/styles/Global';
 import { NextUIProvider } from '@nextui-org/react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createPrismicLink } from 'apollo-link-prismic';
 import ReactGA from 'react-ga';
 
-ReactGA.initialize(process.env.TRACKING_ID);
+const TRACKING_ID = 'G-R23DMQTW0N';
+ReactGA.initialize(TRACKING_ID);
 
 const client = new ApolloClient({
   link: createPrismicLink({
