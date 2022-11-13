@@ -16,6 +16,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import { createPrismicLink } from 'apollo-link-prismic';
 import ReactGA from 'react-ga';
 
+// Adding tracking ID to website.
 const TRACKING_ID = 'G-R23DMQTW0N';
 ReactGA.initialize(TRACKING_ID);
 
