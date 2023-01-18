@@ -14,81 +14,81 @@ import programmer from '../assets/undraw_programming_re_kg9v.svg';
 import hello from '../assets/undraw_hello_re_3evm.svg';
 import HorizontalRule from './styles/HorizontalRule';
 import { motion } from 'framer-motion';
+import FlyBookButton from './FlyBookButton';
 
 function Home() {
+  const ButtonContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
 
-const ButtonContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
+    display: grid;
+    justify-items: center;
 
-  display: grid;
-  justify-items: center;
+    @media only screen and (min-width: 992px) {
+      justify-items: left;
+    }
+  `;
 
-  @media only screen and (min-width: 992px) {
-    justify-items: left;
-  }
-`;
+  const HomeTopGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
 
-const HomeTopGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 150px 1.5em 0 1.5em;
+    text-align: center;
+    align-items: center;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 150px 1.5em 0 1.5em;
-  text-align: center;
-  align-items: center;
+    @media only screen and (min-width: 992px) {
+      height: 100vh;
+      grid-template-columns: 1fr 55%;
+      margin: 0 100px 0 100px;
+      text-align: left;
+    }
+  `;
 
-  @media only screen and (min-width: 992px) {
-    height: 100vh;
-    grid-template-columns: 1fr 55%;
-    margin: 0 100px 0 100px;
-    text-align: left;
-  }
-`;
+  const HomeAboutGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
 
-const HomeAboutGrid = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 100px 1.5em 0 1.5em;
+    text-align: center;
 
-  display: grid;
-  grid-template-columns: 1fr;
-  margin: 100px 1.5em 0 1.5em;
-  text-align: center;
+    @media only screen and (min-width: 992px) {
+      grid-template-columns: 55% 1fr;
+      margin: 0 100px 0 100px;
+      text-align: left;
+    }
+  `;
 
-  @media only screen and (min-width: 992px) {
-    grid-template-columns: 55% 1fr;
-    margin: 0 100px 0 100px;
-    text-align: left;
-  }
-`;
+  const TopImageContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
 
-const TopImageContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
+    @media only screen and (min-width: 992px) {
+      margin: 0;
+    }
+  `;
 
-  @media only screen and (min-width: 992px) {
-    margin: 0;
-  }
-`;
+  const TitleContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+  `;
 
-const TitleContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-`;
+  const AboutImageContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
 
-const AboutImageContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
+    @media only screen and (min-width: 992px) {
+      margin: 0;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  `;
 
-  @media only screen and (min-width: 992px) {
-    margin: 0;
-    grid-column: 1/2;
-    grid-row: 1/2;
-  }
-`;
-
-const AboutTextContainer = styled.div`
-  ${compose(color, space, border, typography, layout, grid)}
-  @media only screen and (min-width: 992px) {
-    grid-column: 2/3;
-    grid-row: 1/2;
-  }
-`;
+  const AboutTextContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+    @media only screen and (min-width: 992px) {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  `;
 
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
@@ -113,8 +113,8 @@ const AboutTextContainer = styled.div`
         <TitleContainer>
           <motion.div
             initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ once: true }}>
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <Text
               css={{ color: '#FF7900', lineHeight: '1.15' }}
               size='3em'
@@ -124,8 +124,8 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ once: true }}>
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <Text
               css={{ color: '#3f3d54', lineHeight: '1.15' }}
               size='4em'
@@ -135,8 +135,8 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ once: true }}>
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <Text
               size='2em'
               weight='normal'
@@ -146,14 +146,14 @@ const AboutTextContainer = styled.div`
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ once: true }}>
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <HorizontalRule />
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
-              viewport={{ once: true }}>
+            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
             <ButtonContainer>
               <Link href='/work'>
                 <Button
@@ -168,6 +168,7 @@ const AboutTextContainer = styled.div`
               </Link>
             </ButtonContainer>
           </motion.div>
+          <FlyBookButton />
         </TitleContainer>
         <motion.div
           initial={{ opacity: 0 }}
