@@ -14,7 +14,6 @@ import programmer from '../assets/undraw_programming_re_kg9v.svg';
 import hello from '../assets/undraw_hello_re_3evm.svg';
 import HorizontalRule from './styles/HorizontalRule';
 import { motion } from 'framer-motion';
-import FlyBookButton from './FlyBookButton';
 
 function Home() {
   const ButtonContainer = styled.div`
@@ -168,7 +167,6 @@ function Home() {
               </Link>
             </ButtonContainer>
           </motion.div>
-          <FlyBookButton />
         </TitleContainer>
         <motion.div
           initial={{ opacity: 0 }}
