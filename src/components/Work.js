@@ -144,8 +144,12 @@ function Work() {
               <div key={card.node._meta.id}>
                 <motion.div
                   whileHover={{ scale: 1.01, transition: { duration: 0.2 } }}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                  initial={{ opacity: 0, y: 150 }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { duration: 1 },
+                  }}
                   viewport={{ once: true }}>
                   <Card
                     css={{

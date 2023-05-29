@@ -89,6 +89,39 @@ function Home() {
     }
   `;
 
+  const HomeFeaturedGrid = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 100px 1.5em 0 1.5em;
+    text-align: center;
+
+    @media only screen and (min-width: 992px) {
+      grid-template-columns: 55% 1fr;
+      margin: 0 100px 0 100px;
+      text-align: left;
+    }
+  `;
+
+  const FeaturedTextContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+    @media only screen and (min-width: 992px) {
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+  `;
+
+  const FeaturedImageContainer = styled.div`
+    ${compose(color, space, border, typography, layout, grid)}
+
+    @media only screen and (min-width: 992px) {
+      margin: 0;
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+  `;
+
   // React hooks used to check the window size.
   const [isMobile, setIsMobile] = useState(false);
   //choose the screen size
@@ -184,8 +217,8 @@ function Home() {
       <HomeAboutGrid>
         <AboutTextContainer>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <Text
               css={{ color: '#3f3d54', lineHeight: '1.15' }}
@@ -195,14 +228,14 @@ function Home() {
             </Text>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <HorizontalRule />
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <Text size='1em' weight='normal' css={{ textRendering: 'auto' }}>
               I began programming just about 4 years ago after I decided that I
@@ -212,8 +245,8 @@ function Home() {
             </Text>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <Text
               size='1em'
@@ -224,17 +257,16 @@ function Home() {
             </Text>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <Text
               size='1em'
               weight='normal'
               css={{ textRendering: 'auto', marginTop: '1em' }}>
               When it comes to learning code, I am most efficient at teaching
-              myself. However, I am currently a university student studying Web
-              Design & Development. I will graduate in the spring of 2023. I
-              currently work for{' '}
+              myself. However, I have a Bachelors degree in Web Design &
+              Development. I currently work for{' '}
               <a href='https://leisuretimeinc.com/about-us'>
                 <Text span css={{ color: '#FF7900' }}>
                   Leisure Time Inc.

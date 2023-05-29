@@ -186,8 +186,8 @@ function Experience() {
       <ExperienceMainGrid>
         <WrittenExperienceContainer>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
               <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
@@ -200,32 +200,32 @@ function Experience() {
             )}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <HorizontalRuleMedium />
           </motion.div>
           <ExperienceDisplay>
             <ExperienceDate>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text css={{ color: '#FF7900' }}>Apr. 2022 - Present</Text>
               </motion.div>
             </ExperienceDate>
             <ExperienceText>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text h4 css={{ color: '#3F3D54' }}>
                   Leisure Time Inc.
                 </Text>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text>
                   I am a Full Stack Web Developer at Leisure Time Inc. Some of
@@ -269,8 +269,8 @@ function Experience() {
         </WrittenExperienceContainer>
         <WrittenExperienceContainer>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
               <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
@@ -283,32 +283,32 @@ function Experience() {
             )}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <HorizontalRuleMedium />
           </motion.div>
           <ExperienceDisplay>
             <ExperienceDate>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text css={{ color: '#FF7900' }}>Sept. 2019 - Present</Text>
               </motion.div>
             </ExperienceDate>
             <ExperienceText>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text h4 css={{ color: '#3F3D54' }}>
                   Brigham Young University of Idaho
                 </Text>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1, transition: { duration: 1 } }}
+                initial={{ opacity: 0, y: 150 }}
+                whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text>
                   I am a university student at Brigham Young University - Idaho
@@ -330,8 +330,8 @@ function Experience() {
         </WrittenExperienceContainer>
         <CodeExperienceContainer>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
               <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
@@ -343,11 +343,16 @@ function Experience() {
               </Text>
             )}
           </motion.div>
-          <HorizontalRuleMedium />
+          <motion.div
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
+            viewport={{ once: true }}>
+            <HorizontalRuleMedium />
+          </motion.div>
           <CodeExperienceIconsGrid>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -362,8 +367,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -378,8 +383,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -394,8 +399,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -410,8 +415,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -426,8 +431,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -442,8 +447,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -458,8 +463,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -474,8 +479,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -490,8 +495,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -506,8 +511,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -522,8 +527,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -538,8 +543,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -554,8 +559,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -570,8 +575,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -586,8 +591,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -602,8 +607,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -621,8 +626,8 @@ function Experience() {
         </CodeExperienceContainer>
         <DesignExperienceContainer>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             {!isMobile ? (
               <Text h1 css={{ fontSize: '50px', lineHeight: '1.1' }}>
@@ -635,15 +640,15 @@ function Experience() {
             )}
           </motion.div>
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
+            initial={{ opacity: 0, y: 150 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true }}>
             <HorizontalRuleMedium />
           </motion.div>
           <DesignExperienceIconsGrid>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -658,8 +663,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
@@ -674,8 +679,8 @@ function Experience() {
               </Tooltip>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              initial={{ opacity: 0, y: 150 }}
+              whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
               viewport={{ once: true }}>
               <Tooltip
                 hideArrow
