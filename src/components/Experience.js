@@ -294,7 +294,7 @@ function Experience() {
                 initial={{ opacity: 0, y: 150 }}
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
-                <Text css={{ color: '#FF7900' }}>Sept. 2019 - Present</Text>
+                <Text css={{ color: '#FF7900' }}>Sept. 2019 - April 2023</Text>
               </motion.div>
             </ExperienceDate>
             <ExperienceText>
@@ -311,9 +311,7 @@ function Experience() {
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text>
-                  I am a university student at Brigham Young University - Idaho
-                  where I study Computer Science. I will graduate in April 2023
-                  with a Bachelors Degree in Web Design & Development.
+                  I graduated from Brigham Young University of Idaho with a degree in Computer Science. I majored specifically in Web Design & Development. 
                 </Text>
                 <Spacer x={2} />
                 <Text>
