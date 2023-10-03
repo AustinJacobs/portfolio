@@ -173,7 +173,7 @@ function Home() {
               size='2em'
               weight='normal'
               css={{ lineHeight: '1', marginTop: '10px' }}>
-              Full Stack Web Developer
+              Front End Web Developer
             </Text>
           </motion.div>
           <motion.div

@@ -228,7 +228,7 @@ function Experience() {
                 whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
                 viewport={{ once: true }}>
                 <Text>
-                  I am a Full Stack Web Developer at Leisure Time Inc. Some of
+                  I am a Front End Web Developer at Leisure Time Inc. Some of
                   my responsibilities include writing new code to produce major
                   updates and features for four websites. I help maintain an
                   online shop that sells thousands of products each month and
